@@ -36,7 +36,7 @@ export function CookieConsent() {
     <>
       {consent === "analytics" && <Analytics beforeSend={redactAnalyticsEvent} />}
       {consent === null && (
-        <aside className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-3xl border border-line bg-white p-4 sm:bottom-5 sm:flex sm:items-center sm:gap-5 sm:p-5" role="dialog" aria-label="Analytics preferences" aria-live="polite">
+        <aside className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-3xl rounded-xl border border-line bg-white p-4 shadow-2xl sm:bottom-5 sm:flex sm:items-center sm:gap-5 sm:p-5" role="dialog" aria-label="Analytics preferences" aria-live="polite">
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-ink">Privacy choice</p>
             <p className="mt-1 text-xs leading-5 text-muted">TalentGuard uses essential browser storage for authentication. Optional Vercel Analytics loads only with your permission and never receives employee IDs, emails, notes, query strings, or form values. Read the <Link to="/privacy" className="font-semibold text-forest underline underline-offset-2">privacy notice</Link>.</p>

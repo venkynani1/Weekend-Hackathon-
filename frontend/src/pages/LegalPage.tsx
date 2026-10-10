@@ -34,7 +34,7 @@ const notices = {
 export function LegalPage({ kind }: { kind: keyof typeof notices }) {
   const notice = notices[kind];
   return (
-    <main className="min-h-screen bg-canvas text-ink">
+    <main className="app-shell min-h-[100dvh] bg-canvas text-ink">
       <header className="border-b border-line bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-5 sm:px-8">
           <Brand />
@@ -46,7 +46,7 @@ export function LegalPage({ kind }: { kind: keyof typeof notices }) {
         <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-.045em] sm:text-5xl">{notice.title}</h1>
         <p className="mt-5 max-w-2xl text-base leading-7 text-muted">{notice.intro}</p>
         <p className="mt-5 text-xs text-muted">Effective 10 October 2026</p>
-        <div className="mt-12 divide-y divide-line border-y border-line">
+        <div className="surface-panel mt-12 divide-y divide-line border-line px-5 sm:px-8">
           {notice.sections.map(([title, body]) => (
             <section key={title} className="grid gap-3 py-6 md:grid-cols-[180px_1fr] md:gap-8">
               <h2 className="text-sm font-semibold text-forest">{title}</h2>

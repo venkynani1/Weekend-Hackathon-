@@ -4,8 +4,8 @@ import { ThemeToggle } from "../components/ThemeToggle";
 
 export function NotFoundPage() {
   return (
-    <main className="grid min-h-screen place-items-center bg-canvas px-5 py-12 text-ink">
-      <section className="w-full max-w-xl border border-line bg-white p-7 sm:p-10">
+    <main className="app-shell grid min-h-[100dvh] place-items-center bg-canvas px-5 py-12 text-ink">
+      <section className="surface-panel w-full max-w-xl p-7 sm:p-10">
         <div className="flex items-center justify-between gap-4"><Brand /><ThemeToggle /></div>
         <p className="mt-12 text-xs font-bold uppercase tracking-[.16em] text-coral">Error 404</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-[-.045em]">This page is outside the review queue.</h1>

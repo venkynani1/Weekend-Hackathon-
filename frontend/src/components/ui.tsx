@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "motion/react";
 
 export function Eyebrow({ children }: { children: ReactNode }) {
-  return <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-coral">{children}</p>;
+  return <p className="eyebrow mb-2 text-[10px] font-bold uppercase text-coral">{children}</p>;
 }
 
 export function PageHeader({
@@ -17,11 +17,11 @@ export function PageHeader({
   action?: ReactNode;
 }) {
   return (
-    <div className="mb-8 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+    <div className="mb-9 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
       <div>
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="max-w-4xl text-3xl font-semibold tracking-[-0.045em] text-ink sm:text-4xl">{title}</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">{description}</p>
+        <h1 className="max-w-4xl text-3xl font-semibold leading-[1.04] tracking-[-0.055em] text-ink sm:text-[2.7rem]">{title}</h1>
+        <p className="mt-4 max-w-2xl text-[13px] leading-6 text-muted">{description}</p>
       </div>
       {action}
     </div>
@@ -46,7 +46,7 @@ export function MetricCard({
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`border-0 p-5 ${
+      className={`surface-panel border-0 p-5 ${
         accent ? "bg-brand text-white" : "bg-surface text-ink"
       }`}
     >
@@ -64,19 +64,19 @@ export function RiskBadge({ band }: { band: string }) {
       : band === "High"
         ? "bg-amber-100 text-amber-800"
         : "bg-mint text-forest";
-  return <span className={`inline-flex border border-current/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${styles}`}>{band}</span>;
+  return <span className={`status-chip inline-flex border border-current/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${styles}`}>{band}</span>;
 }
 
 export function SkeletonPage() {
   return (
     <div className="animate-pulse">
-      <div className="h-3 w-28 bg-slate-200" />
-      <div className="mt-4 h-10 w-2/3 bg-slate-200" />
-      <div className="mt-4 h-4 w-1/2 bg-slate-200" />
+      <div className="h-2.5 w-28 rounded-full bg-slate-200" />
+      <div className="mt-5 h-10 w-2/3 rounded-lg bg-slate-200" />
+      <div className="mt-4 h-4 w-1/2 rounded-lg bg-slate-200" />
       <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {[0, 1, 2, 3].map((item) => <div key={item} className="h-40 border border-line bg-white" />)}
+        {[0, 1, 2, 3].map((item) => <div key={item} className="surface-panel h-40" />)}
       </div>
-      <div className="mt-6 h-96 border border-line bg-white" />
+      <div className="surface-panel mt-6 h-96" />
     </div>
   );
 }
@@ -84,7 +84,7 @@ export function SkeletonPage() {
 export function ErrorState({ message, retry }: { message: string; retry: () => void }) {
   return (
     <div className="grid min-h-[60vh] place-items-center">
-      <div className="max-w-md border border-red-200 bg-white p-8 text-center">
+      <div className="surface-panel max-w-md border-red-200 p-8 text-center">
         <p className="text-lg font-semibold text-ink">The dashboard API is unavailable</p>
         <p className="mt-2 text-sm leading-6 text-muted">{message}</p>
         <button onClick={retry} className="mt-5 bg-brand px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-light">Try again</button>

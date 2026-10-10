@@ -44,12 +44,12 @@ export function LoginPage() {
   }
 
   return (
-    <main className="relative grid min-h-screen overflow-hidden bg-canvas lg:grid-cols-[1.08fr_.92fr]">
-      <section className="relative hidden min-h-screen flex-col justify-between bg-brand p-12 text-white lg:flex xl:p-16">
+    <main className="app-shell relative grid min-h-[100dvh] overflow-hidden bg-canvas lg:grid-cols-[1.08fr_.92fr]">
+      <section className="relative hidden min-h-[100dvh] flex-col justify-between bg-brand p-12 text-white lg:flex xl:p-16">
         <Brand inverse />
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }} className="max-w-xl">
           <p className="text-[11px] font-bold uppercase tracking-[.2em] text-mint">Retention intelligence</p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.04] tracking-[-.06em] xl:text-6xl">Focus attention where human action can matter.</h1>
+          <h1 className="mt-5 max-w-2xl text-5xl font-semibold leading-[1.01] tracking-[-.07em] xl:text-[4.5rem]">Focus attention where human action can matter.</h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-white/62">A capacity-ranked, auditable workflow for reviewing attrition signals and tracking supportive interventions.</p>
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {["Tenant-isolated data", "Human review required", "Persistent audit trail"].map((item) => <div key={item} className="flex items-center gap-2 border-y border-white/10 bg-white/5 px-3 py-3 text-[11px] text-white/70"><CheckCircle2 size={14} className="text-mint" />{item}</div>)}
@@ -58,11 +58,11 @@ export function LoginPage() {
         <p className="max-w-lg text-[11px] leading-5 text-white/40">Risk estimates are decision-support signals. They are not causal findings and never automate employment decisions.</p>
       </section>
 
-      <section className="relative grid min-h-screen place-items-center px-5 py-10 sm:px-10">
+      <section className="relative grid min-h-[100dvh] place-items-center px-5 py-10 sm:px-10">
         <div className="absolute right-5 top-5 sm:right-8 sm:top-7"><ThemeToggle /></div>
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08, duration: .5 }} className="w-full max-w-[460px]">
           <div className="mb-10 lg:hidden"><Brand /></div>
-          <div className="mb-7 grid size-12 place-items-center bg-brand text-white"><LockKeyhole size={21} /></div>
+          <div className="mb-7 grid size-12 place-items-center rounded-xl bg-brand text-white shadow-[0_10px_25px_rgba(18,60,48,.15)]"><LockKeyhole size={21} /></div>
           <p className="text-[10px] font-bold uppercase tracking-[.2em] text-coral">Secure workspace</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-.05em]">{mode === "signin" ? "Welcome back." : "Create your account."}</h2>
           <p className="mt-3 text-sm leading-6 text-muted">{mode === "signin" ? "Sign in with your approved HR account." : "The first registered user securely bootstraps the workspace administrator role."}</p>

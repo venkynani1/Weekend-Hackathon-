@@ -60,7 +60,7 @@ export function WatchlistPage() {
       <section className="overflow-hidden border-y border-line bg-white">
         <div className="flex items-center justify-between border-b border-line px-5 py-4"><div className="flex items-center gap-2 text-xs font-bold text-ink"><SlidersHorizontal size={15} className="text-coral" /> Ranked intervention queue</div><p className="text-[11px] text-muted">{filtered.length} of {capacity}</p></div>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[900px] border-collapse text-left">
+          <table className="data-table w-full min-w-[900px] border-collapse text-left">
             <thead><tr className="bg-brand text-[9px] uppercase tracking-[.14em] text-white/65"><th className="px-5 py-3.5">Rank</th><th className="px-4 py-3.5">Employee</th><th className="px-4 py-3.5">Risk</th><th className="px-4 py-3.5">Department</th><th className="px-4 py-3.5">Leading signal</th><th className="px-4 py-3.5">First action</th><th className="px-5 py-3.5" /></tr></thead>
             <motion.tbody layout>
               <AnimatePresence initial={false}>

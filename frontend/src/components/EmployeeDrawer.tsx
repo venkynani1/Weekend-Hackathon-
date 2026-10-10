@@ -91,14 +91,14 @@ export function EmployeeDrawer({ employee, close }: { employee: EmployeeRisk | n
       {employee && (
         <>
           <motion.button aria-label="Close employee review" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={close} className="fixed inset-0 z-40 bg-ink/35 backdrop-blur-[3px]" />
-          <motion.aside role="dialog" aria-modal="true" aria-labelledby="employee-review-title" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", stiffness: 330, damping: 34 }} className="fixed inset-y-0 right-0 z-50 w-full max-w-[610px] overflow-y-auto border-l border-line bg-[#fbfcf8]">
+          <motion.aside role="dialog" aria-modal="true" aria-labelledby="employee-review-title" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", stiffness: 330, damping: 34 }} className="fixed inset-y-0 right-0 z-50 w-full max-w-[610px] overflow-y-auto border-l border-line bg-[#fbfcf8] shadow-2xl">
             <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-[#fbfcf8]/90 px-6 py-5 backdrop-blur-xl sm:px-8">
               <div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-coral">Employee review</p><h2 id="employee-review-title" className="mt-1 text-2xl font-semibold tracking-[-.04em]">Employee {employee.EmployeeNumber}</h2></div>
               <button onClick={close} className="grid size-10 place-items-center border border-line bg-white transition hover:border-forest/30" aria-label="Close"><X size={18} /></button>
             </div>
 
             <div className="space-y-7 p-6 sm:p-8">
-              <div className="grid grid-cols-3 overflow-hidden bg-brand text-white">
+              <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-brand text-white">
                 {[["Rank", `#${String(employee.Rank).padStart(2, "0")}`], ["Risk score", percent(employee.RiskScore)], ["Outcome", employee.HistoricalOutcome]].map(([label, value], index) => <div key={label} className={`p-4 ${index < 2 ? "border-r border-white/10" : ""}`}><p className="text-[9px] font-semibold uppercase tracking-wider text-white/55">{label}</p><p className="mt-2 text-lg font-semibold">{value}</p></div>)}
               </div>
 
@@ -112,9 +112,9 @@ export function EmployeeDrawer({ employee, close }: { employee: EmployeeRisk | n
                 <div className="divide-y divide-line border-y border-line">{[employee.RiskReason1, employee.RiskReason2, employee.RiskReason3].map((reason, index) => <motion.div initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .1 + index * .06 }} key={`${reason}-${index}`} className="flex gap-3 bg-white py-3.5 text-sm leading-5"><span className="grid size-6 shrink-0 place-items-center bg-coral-soft text-[10px] font-bold text-coral-deep">{index + 1}</span>{reason}</motion.div>)}</div>
               </section>
 
-              <section className="border-y border-forest/15 bg-mint p-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-forest/60">Recommended intervention</p><div className="mt-2 flex items-center gap-2"><strong className="text-base text-forest">{employee.PrimaryAction}</strong><ArrowUpRight size={16} className="text-forest" /></div><p className="mt-3 text-sm leading-6 text-forest/75">{employee.Recommendation}</p></section>
+              <section className="rounded-xl border border-forest/15 bg-mint p-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-forest/60">Recommended intervention</p><div className="mt-2 flex items-center gap-2"><strong className="text-base text-forest">{employee.PrimaryAction}</strong><ArrowUpRight size={16} className="text-forest" /></div><p className="mt-3 text-sm leading-6 text-forest/75">{employee.Recommendation}</p></section>
 
-              <section className="border border-amber-200 bg-amber-50 p-5">
+              <section className="rounded-xl border border-amber-200 bg-amber-50 p-5">
                 <div className="flex flex-wrap items-start justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[.16em] text-amber-900">Agent-assisted draft</p><h3 className="mt-1 text-sm font-semibold text-ink">PENDING_APPROVAL</h3></div><button type="button" onClick={() => void copyDraft()} className="inline-flex h-9 items-center gap-2 border border-amber-300 bg-white px-3 text-[11px] font-semibold text-amber-950 hover:border-amber-500">{draftCopied ? <Check size={14} /> : <Clipboard size={14} />}{draftCopied ? "Copied" : "Copy draft"}</button></div>
                 <pre className="mt-4 whitespace-pre-wrap font-sans text-xs leading-5 text-amber-950/80">{pendingDraft}</pre>
                 <p className="mt-3 border-t border-amber-200 pt-3 text-[10px] leading-4 text-amber-900/75">Rule-based draft. It omits the risk score and must be reviewed, edited, and approved by a qualified person before use.</p>

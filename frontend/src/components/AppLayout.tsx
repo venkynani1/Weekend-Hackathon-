@@ -34,7 +34,7 @@ function Navigation({ close }: { close?: () => void }) {
           end={end}
           onClick={close}
           className={({ isActive }) =>
-            `group flex items-center gap-3 border-l-2 px-3.5 py-3 text-sm font-semibold transition ${
+            `app-nav-link group flex items-center gap-3 border-l-2 px-3.5 py-3 text-sm font-semibold transition ${
               isActive ? "border-coral bg-brand text-white" : "border-transparent text-muted hover:border-line hover:bg-surface hover:text-ink"
             }`
           }
@@ -76,7 +76,7 @@ export function AppLayout() {
   useEffect(() => setMobileOpen(false), [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-canvas text-ink">
+    <div className="app-shell min-h-screen bg-canvas text-ink">
       <Sidebar />
       <AnimatePresence>
         {mobileOpen && (
@@ -98,7 +98,7 @@ export function AppLayout() {
             >
               <div className="flex items-center justify-between">
                 <Brand />
-                <button onClick={() => setMobileOpen(false)} className="grid size-9 place-items-center border border-line bg-white" aria-label="Close menu"><X size={17} /></button>
+                <button onClick={() => setMobileOpen(false)} className="grid size-9 place-items-center rounded-lg border border-line bg-white" aria-label="Close menu"><X size={17} /></button>
               </div>
               <Navigation close={() => setMobileOpen(false)} />
             </motion.aside>
@@ -109,21 +109,21 @@ export function AppLayout() {
       <div className="lg:pl-[256px]">
         <header className="sticky top-0 z-20 flex h-[72px] items-center justify-between border-b border-line/80 bg-canvas/85 px-4 backdrop-blur-xl sm:px-7 lg:px-10">
           <div className="flex items-center gap-3">
-            <button onClick={() => setMobileOpen(true)} className="grid size-10 place-items-center border border-line bg-white lg:hidden" aria-label="Open menu"><Menu size={18} /></button>
-            <div className="hidden items-center gap-2 border border-forest/10 bg-white px-3 py-1.5 text-[11px] font-semibold text-forest sm:flex">
-              <span className="size-2 bg-emerald-600" />
+            <button onClick={() => setMobileOpen(true)} className="grid size-10 place-items-center rounded-lg border border-line bg-white lg:hidden" aria-label="Open menu"><Menu size={18} /></button>
+            <div className="hidden items-center gap-2 rounded-lg border border-forest/10 bg-white px-3 py-1.5 text-[11px] font-semibold text-forest sm:flex">
+              <span className="size-2 rounded-full bg-emerald-600" />
               Analysis ready
             </div>
             <div className="hidden h-4 w-px bg-line sm:block" />
             <p className="hidden text-xs text-muted sm:block">Synthetic workforce · historical validation</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="hidden items-center gap-2 border border-line bg-white px-3 py-2 text-xs font-semibold text-ink sm:flex"><Activity size={15} className="text-coral" /> Approved model</div>
+            <div className="hidden items-center gap-2 rounded-lg border border-line bg-white px-3 py-2 text-xs font-semibold text-ink sm:flex"><Activity size={15} className="text-coral" /> Approved model</div>
             <div className="hidden sm:block"><ThemeToggle /></div>
             <div className="sm:hidden"><ThemeToggle compact /></div>
             <div className="hidden text-right md:block"><p className="max-w-48 truncate text-[11px] font-semibold text-ink">{user?.email}</p><p className="text-[9px] uppercase tracking-wider text-muted">Authenticated</p></div>
-            <div className="grid size-10 place-items-center bg-brand text-xs font-bold text-white">{(user?.email?.slice(0, 2) ?? "HR").toUpperCase()}</div>
-            <button onClick={() => void signOut()} className="grid size-10 place-items-center border border-line bg-white text-muted transition hover:border-coral/30 hover:text-coral" aria-label="Sign out"><LogOut size={16} /></button>
+            <div className="grid size-10 place-items-center rounded-lg bg-brand text-xs font-bold text-white">{(user?.email?.slice(0, 2) ?? "HR").toUpperCase()}</div>
+            <button onClick={() => void signOut()} className="grid size-10 place-items-center rounded-lg border border-line bg-white text-muted transition hover:border-coral/30 hover:text-coral" aria-label="Sign out"><LogOut size={16} /></button>
           </div>
         </header>
 
