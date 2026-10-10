@@ -4,6 +4,7 @@
     "columns": 35,
     "attrition_count": 237,
     "attrition_rate": 0.16122448979591836,
+    "all_no_accuracy": 0.8387755102040817,
     "missing_cells": 0
   },
   "selected_model": "Logistic regression",
@@ -138,6 +139,189 @@
       "count": 5
     }
   ],
+  "historical_eda": {
+    "overtime_yes_rate": 0.30528846153846156,
+    "overtime_no_rate": 0.10436432637571158,
+    "sales_representative_rate": 0.39759036144578314,
+    "frequent_travel_rate": 0.2490974729241877,
+    "rare_travel_rate": 0.14956855225311602,
+    "low_satisfaction_rate": 0.22837370242214533,
+    "high_satisfaction_rate": 0.11328976034858387,
+    "attrited_income_median": 3202.0,
+    "retained_income_median": 5204.0,
+    "attrited_tenure_median": 3.0,
+    "retained_tenure_median": 6.0,
+    "attrited_age_median": 32.0,
+    "retained_age_median": 36.0
+  },
+  "calibration_report": {
+    "status": "reported_not_recalibrated",
+    "method": "Ten-bin reliability summary on five-fold out-of-fold probabilities",
+    "brier_score": 0.16243334766988485,
+    "expected_calibration_error": 0.2031057157541015,
+    "bins": [
+      {
+        "lower_bound": 0.0,
+        "upper_bound": 0.1,
+        "predicted": 0.04683173218894947,
+        "observed": 0.03519061583577713,
+        "count": 341
+      },
+      {
+        "lower_bound": 0.1,
+        "upper_bound": 0.2,
+        "predicted": 0.14621688952264272,
+        "observed": 0.030973451327433628,
+        "count": 226
+      },
+      {
+        "lower_bound": 0.2,
+        "upper_bound": 0.30000000000000004,
+        "predicted": 0.24439761800362295,
+        "observed": 0.06748466257668712,
+        "count": 163
+      },
+      {
+        "lower_bound": 0.30000000000000004,
+        "upper_bound": 0.4,
+        "predicted": 0.3484549803056633,
+        "observed": 0.1388888888888889,
+        "count": 144
+      },
+      {
+        "lower_bound": 0.4,
+        "upper_bound": 0.5,
+        "predicted": 0.45030829889636476,
+        "observed": 0.1171875,
+        "count": 128
+      },
+      {
+        "lower_bound": 0.5,
+        "upper_bound": 0.6000000000000001,
+        "predicted": 0.5530766886170602,
+        "observed": 0.16822429906542055,
+        "count": 107
+      },
+      {
+        "lower_bound": 0.6000000000000001,
+        "upper_bound": 0.7000000000000001,
+        "predicted": 0.650782716583163,
+        "observed": 0.20689655172413793,
+        "count": 116
+      },
+      {
+        "lower_bound": 0.7000000000000001,
+        "upper_bound": 0.8,
+        "predicted": 0.7526108539522177,
+        "observed": 0.3684210526315789,
+        "count": 95
+      },
+      {
+        "lower_bound": 0.8,
+        "upper_bound": 0.9,
+        "predicted": 0.8472684723932404,
+        "observed": 0.4606741573033708,
+        "count": 89
+      },
+      {
+        "lower_bound": 0.9,
+        "upper_bound": 1.0,
+        "predicted": 0.9397056937460333,
+        "observed": 0.8852459016393442,
+        "count": 61
+      }
+    ],
+    "note": "Scores are ranking signals, not guaranteed future probabilities."
+  },
+  "fairness_report": {
+    "status": "prototype_audit",
+    "attributes": {
+      "Gender": [
+        {
+          "group": "Female",
+          "records": 588,
+          "selection_rate": 0.03231292517006803,
+          "observed_attrition_rate": 0.14795918367346939,
+          "true_positive_rate": 0.19540229885057472,
+          "average_risk": 0.37517496287845226
+        },
+        {
+          "group": "Male",
+          "records": 882,
+          "selection_rate": 0.035147392290249435,
+          "observed_attrition_rate": 0.17006802721088435,
+          "true_positive_rate": 0.18,
+          "average_risk": 0.3571003673310649
+        }
+      ],
+      "Age band": [
+        {
+          "group": "30\u201339",
+          "records": 622,
+          "selection_rate": 0.024115755627009645,
+          "observed_attrition_rate": 0.14308681672025725,
+          "true_positive_rate": 0.15730337078651685,
+          "average_risk": 0.3628382107778249
+        },
+        {
+          "group": "40\u201349",
+          "records": 349,
+          "selection_rate": 0.017191977077363897,
+          "observed_attrition_rate": 0.09742120343839542,
+          "true_positive_rate": 0.08823529411764706,
+          "average_risk": 0.32323430993283747
+        },
+        {
+          "group": "50+",
+          "records": 173,
+          "selection_rate": 0.017341040462427744,
+          "observed_attrition_rate": 0.1329479768786127,
+          "true_positive_rate": 0.08695652173913043,
+          "average_risk": 0.2891684815542044
+        },
+        {
+          "group": "Under 30",
+          "records": 326,
+          "selection_rate": 0.07975460122699386,
+          "observed_attrition_rate": 0.2791411042944785,
+          "true_positive_rate": 0.27472527472527475,
+          "average_risk": 0.45105863061130214
+        }
+      ],
+      "Marital status": [
+        {
+          "group": "Divorced",
+          "records": 327,
+          "selection_rate": 0.009174311926605505,
+          "observed_attrition_rate": 0.10091743119266056,
+          "true_positive_rate": 0.06060606060606061,
+          "average_risk": 0.3071314568024937
+        },
+        {
+          "group": "Married",
+          "records": 673,
+          "selection_rate": 0.022288261515601784,
+          "observed_attrition_rate": 0.12481426448736999,
+          "true_positive_rate": 0.14285714285714285,
+          "average_risk": 0.3407659091395712
+        },
+        {
+          "group": "Single",
+          "records": 470,
+          "selection_rate": 0.06808510638297872,
+          "observed_attrition_rate": 0.2553191489361702,
+          "true_positive_rate": 0.25,
+          "average_risk": 0.4378679977301752
+        }
+      ]
+    },
+    "note": "Age, gender, and marital status are excluded from model inputs. Group differences still require review because proxy effects can remain."
+  },
+  "temporal_validation": {
+    "status": "unavailable",
+    "snapshot_dates": 1,
+    "reason": "The supplied dataset is cross-sectional and has no historical snapshot timestamps. Temporal validation starts after multiple dated source snapshots are available."
+  },
   "methodology": {
     "cross_validation_folds": 5,
     "capacity": 50,
@@ -153,6 +337,10 @@
       "MaritalStatus"
     ],
     "explanation_method": "Counterfactual feature replacement against workforce medians or modes",
-    "scope": "Historical demonstration using the IBM HR attrition dataset"
+    "scope": "Historical demonstration using the IBM HR attrition dataset",
+    "temporal_validation": {
+      "status": "unavailable",
+      "reason": "The supplied dataset contains one undated cross-sectional snapshot."
+    }
   }
 }

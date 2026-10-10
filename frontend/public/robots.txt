@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /watchlist
+Disallow: /live-review
+Disallow: /governance
+Disallow: /data-sync
+Sitemap: http://127.0.0.1:5173/sitemap.xml

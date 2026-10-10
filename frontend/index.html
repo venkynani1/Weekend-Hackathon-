@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Capacity-ranked employee attrition signals, evidence, and auditable retention interventions for HR teams." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0d2f27" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TalentGuard" />
+    <meta property="og:title" content="TalentGuard | Retention intelligence" />
+    <meta property="og:description" content="Focus a 50-person HR review queue using honest validation, transparent reasons, and auditable human interventions." />
+    <meta property="og:image" content="/og-talentguard.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="TalentGuard retention decisions backed by evidence, with a ranked-list graphic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TalentGuard | Retention intelligence" />
+    <meta name="twitter:description" content="A capacity-ranked and auditable employee retention review workflow." />
+    <meta name="twitter:image" content="/og-talentguard.jpg" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script>
+      (() => {
+        let stored = null;
+        try { stored = localStorage.getItem("talentguard-theme"); } catch {}
+        const theme = stored === "light" || stored === "dark" ? stored : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#0a100d" : "#0d2f27");
+      })();
+    </script>
+    <title>TalentGuard | Retention intelligence</title>
+  </head>
+  <body>
+    <noscript>TalentGuard requires JavaScript for authenticated retention-review workflows.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -28,6 +28,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     average_precision_score,
+    brier_score_loss,
     confusion_matrix,
     f1_score,
     precision_score,
@@ -280,7 +281,7 @@ def _satisfaction_label(value: float) -> str:
 def explain_feature(feature: str, value: Any, baseline: Any) -> str:
     """Translate a model contribution into HR-readable, factual wording."""
     if feature == "OverTime":
-        return "Regular overtime increases workload and burnout exposure" if value == "Yes" else "Workload pattern differs from lower-risk peers"
+        return "Regular overtime is associated with higher historical attrition risk" if value == "Yes" else "Workload pattern differs from higher-risk peers"
     if feature in {"JobSatisfaction", "EnvironmentSatisfaction", "JobInvolvement", "RelationshipSatisfaction", "WorkLifeBalance"}:
         label = _satisfaction_label(float(value))
         readable = {
@@ -390,7 +391,83 @@ def _risk_band(rank: int) -> str:
         return "Priority"
     if rank <= 25:
         return "High"
-    return "Elevated"
+    if rank <= 50:
+        return "Elevated"
+    return "Monitored"
+
+
+def _calibration_report(target: pd.Series, probabilities: np.ndarray, bins: int = 10) -> dict[str, Any]:
+    """Summarize out-of-fold reliability without claiming calibrated forecasts."""
+    y_true = target.to_numpy()
+    edges = np.linspace(0.0, 1.0, bins + 1)
+    assignments = np.digitize(probabilities, edges[1:-1], right=True)
+    records: list[dict[str, Any]] = []
+    weighted_gap = 0.0
+    for index in range(bins):
+        mask = assignments == index
+        count = int(mask.sum())
+        if not count:
+            continue
+        predicted = float(probabilities[mask].mean())
+        observed = float(y_true[mask].mean())
+        weighted_gap += count * abs(predicted - observed)
+        records.append(
+            {
+                "lower_bound": float(edges[index]),
+                "upper_bound": float(edges[index + 1]),
+                "predicted": predicted,
+                "observed": observed,
+                "count": count,
+            }
+        )
+    return {
+        "status": "reported_not_recalibrated",
+        "method": "Ten-bin reliability summary on five-fold out-of-fold probabilities",
+        "brier_score": float(brier_score_loss(y_true, probabilities)),
+        "expected_calibration_error": float(weighted_gap / len(y_true)),
+        "bins": records,
+        "note": "Scores are ranking signals, not guaranteed future probabilities.",
+    }
+
+
+def _fairness_report(raw: pd.DataFrame, target: pd.Series, probabilities: np.ndarray, capacity: int = 50) -> dict[str, Any]:
+    """Report group outcomes for excluded sensitive attributes."""
+    selected = np.zeros(len(raw), dtype=bool)
+    selected[np.argsort(-probabilities)[: min(capacity, len(raw))]] = True
+    dimensions: dict[str, pd.Series] = {
+        "Gender": raw["Gender"].astype(str),
+        "Age band": pd.cut(
+            raw["Age"],
+            bins=[0, 29, 39, 49, float("inf")],
+            labels=["Under 30", "30–39", "40–49", "50+"],
+        ).astype(str),
+        "Marital status": raw["MaritalStatus"].astype(str),
+    }
+    attributes: dict[str, list[dict[str, Any]]] = {}
+    y_true = target.to_numpy()
+    for attribute, groups in dimensions.items():
+        rows: list[dict[str, Any]] = []
+        for group in sorted(groups.unique()):
+            mask = groups.to_numpy() == group
+            positives = int(y_true[mask].sum())
+            selected_count = int(selected[mask].sum())
+            true_positives = int((selected & mask & (y_true == 1)).sum())
+            rows.append(
+                {
+                    "group": group,
+                    "records": int(mask.sum()),
+                    "selection_rate": float(selected_count / mask.sum()),
+                    "observed_attrition_rate": float(y_true[mask].mean()),
+                    "true_positive_rate": float(true_positives / positives) if positives else None,
+                    "average_risk": float(probabilities[mask].mean()),
+                }
+            )
+        attributes[attribute] = rows
+    return {
+        "status": "prototype_audit",
+        "attributes": attributes,
+        "note": "Age, gender, and marital status are excluded from model inputs. Group differences still require review because proxy effects can remain.",
+    }
 
 
 def _department_summary(raw: pd.DataFrame, oof_probabilities: np.ndarray, top_ids: set[int]) -> list[dict[str, Any]]:
@@ -409,6 +486,30 @@ def _department_summary(raw: pd.DataFrame, oof_probabilities: np.ndarray, top_id
             }
         )
     return sorted(records, key=lambda record: record["watchlist_count"], reverse=True)
+
+
+def _historical_eda(raw: pd.DataFrame) -> dict[str, float]:
+    """Return judge-facing descriptive statistics without implying causality."""
+    attrited = raw[TARGET].eq("Yes")
+
+    def rate(mask: pd.Series) -> float:
+        return float(attrited[mask].mean())
+
+    return {
+        "overtime_yes_rate": rate(raw["OverTime"].eq("Yes")),
+        "overtime_no_rate": rate(raw["OverTime"].eq("No")),
+        "sales_representative_rate": rate(raw["JobRole"].eq("Sales Representative")),
+        "frequent_travel_rate": rate(raw["BusinessTravel"].eq("Travel_Frequently")),
+        "rare_travel_rate": rate(raw["BusinessTravel"].eq("Travel_Rarely")),
+        "low_satisfaction_rate": rate(raw["JobSatisfaction"].eq(1)),
+        "high_satisfaction_rate": rate(raw["JobSatisfaction"].eq(4)),
+        "attrited_income_median": float(raw.loc[attrited, "MonthlyIncome"].median()),
+        "retained_income_median": float(raw.loc[~attrited, "MonthlyIncome"].median()),
+        "attrited_tenure_median": float(raw.loc[attrited, "YearsAtCompany"].median()),
+        "retained_tenure_median": float(raw.loc[~attrited, "YearsAtCompany"].median()),
+        "attrited_age_median": float(raw.loc[attrited, "Age"].median()),
+        "retained_age_median": float(raw.loc[~attrited, "Age"].median()),
+    }
 
 
 def train_and_export(
@@ -474,6 +575,7 @@ def train_and_export(
         "OverTime",
         "JobSatisfaction",
         "WorkLifeBalance",
+        "MonthlyIncome",
         "HistoricalOutcome",
         "RiskReason1",
         "RiskReason2",
@@ -485,6 +587,11 @@ def train_and_export(
     watchlist = top[watchlist_columns].copy()
     watchlist.to_csv(output_path / "top_50_watchlist.csv", index=False, float_format="%.6f")
     watchlist.head(10).to_csv(output_path / "top_10_action_plan.csv", index=False, float_format="%.6f")
+
+    all_scores = ranking[[IDENTIFIER, "RiskScore", "Rank", TARGET]].copy()
+    all_scores["RiskBand"] = all_scores["Rank"].map(_risk_band)
+    all_scores = all_scores.rename(columns={TARGET: "HistoricalOutcome"})
+    all_scores.to_csv(output_path / "all_risk_scores.csv", index=False, float_format="%.6f")
 
     top_ids = set(top[IDENTIFIER].astype(int))
     department_summary = _department_summary(raw, selected_oof, top_ids)
@@ -523,6 +630,7 @@ def train_and_export(
             "columns": int(len(raw.columns)),
             "attrition_count": int(target.sum()),
             "attrition_rate": float(target.mean()),
+            "all_no_accuracy": float(1 - target.mean()),
             "missing_cells": int(raw.isna().sum().sum()),
         },
         "selected_model": selected_name,
@@ -532,6 +640,14 @@ def train_and_export(
         "holdout": holdout,
         "department_summary": department_summary,
         "driver_summary": driver_summary,
+        "historical_eda": _historical_eda(raw),
+        "calibration_report": _calibration_report(target, selected_oof),
+        "fairness_report": _fairness_report(raw, target, selected_oof),
+        "temporal_validation": {
+            "status": "unavailable",
+            "snapshot_dates": 1,
+            "reason": "The supplied dataset is cross-sectional and has no historical snapshot timestamps. Temporal validation starts after multiple dated source snapshots are available.",
+        },
         "methodology": {
             "cross_validation_folds": 5,
             "capacity": 50,
@@ -539,6 +655,10 @@ def train_and_export(
             "excluded_columns": MODEL_EXCLUDED_COLUMNS,
             "explanation_method": "Counterfactual feature replacement against workforce medians or modes",
             "scope": "Historical demonstration using the IBM HR attrition dataset",
+            "temporal_validation": {
+                "status": "unavailable",
+                "reason": "The supplied dataset contains one undated cross-sectional snapshot.",
+            },
         },
     }
 

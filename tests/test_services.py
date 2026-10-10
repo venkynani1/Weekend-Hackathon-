@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import unittest
+import csv
+import json
 
 from services import (
     CONSTANT_COLUMNS,
     DEFAULT_DATASET,
+    DEFAULT_OUTPUT_DIR,
     IDENTIFIER,
     SENSITIVE_COLUMNS,
     TARGET,
@@ -41,6 +44,19 @@ class DatasetTests(unittest.TestCase):
         action, recommendation = recommendation_for(reasons, detailed=True)
         self.assertEqual(action, "Compensation review")
         self.assertIn("two weeks", recommendation)
+
+    def test_governance_reports_and_all_score_export(self):
+        with (DEFAULT_OUTPUT_DIR / "model_metrics.json").open(encoding="utf-8") as handle:
+            metrics = json.load(handle)
+        self.assertEqual(metrics["calibration_report"]["status"], "reported_not_recalibrated")
+        self.assertGreater(metrics["calibration_report"]["brier_score"], 0)
+        self.assertIn("Gender", metrics["fairness_report"]["attributes"])
+        self.assertEqual(metrics["temporal_validation"]["status"], "unavailable")
+
+        with (DEFAULT_OUTPUT_DIR / "all_risk_scores.csv").open(newline="", encoding="utf-8-sig") as handle:
+            scores = list(csv.DictReader(handle))
+        self.assertEqual(len(scores), 1470)
+        self.assertEqual([int(row["Rank"]) for row in scores], list(range(1, 1471)))
 
 
 if __name__ == "__main__":

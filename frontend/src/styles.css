@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f7f8f4;
+  --color-surface: #ffffff;
+  --color-panel: #f3f5ef;
+  --color-subtle: #f4f6f1;
+  --color-ink: #132820;
+  --color-muted: #6d7b75;
+  --color-line: #dde3dc;
+  --color-forest: #0d2f27;
+  --color-forest-light: #17483b;
+  --color-brand: #0d2f27;
+  --color-brand-light: #17483b;
+  --color-coral: #e96d50;
+  --color-coral-deep: #8a3e2d;
+  --color-coral-soft: #fde6df;
+  --color-mint: #dcefe5;
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-theme="dark"] {
+  --color-canvas: #0a100d;
+  --color-surface: #111915;
+  --color-panel: #0e1713;
+  --color-subtle: #17211d;
+  --color-ink: #edf4ef;
+  --color-muted: #9aa9a1;
+  --color-line: #2b3832;
+  --color-forest: #a9d6c3;
+  --color-forest-light: #c6eadb;
+  --color-coral: #f28b70;
+  --color-coral-deep: #ffc1af;
+  --color-coral-soft: #44251f;
+  --color-mint: #18352b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-canvas);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+:root[data-theme="dark"] .bg-white { background-color: var(--color-surface); }
+:root[data-theme="dark"] [class~="bg-[#f3f5ef]"] { background-color: var(--color-panel); }
+:root[data-theme="dark"] [class~="bg-[#f4f6f1]"] { background-color: var(--color-subtle); }
+:root[data-theme="dark"] [class~="bg-[#f5f7f2]"] { background-color: var(--color-subtle); }
+:root[data-theme="dark"] [class~="bg-[#f8f9f6]"] { background-color: var(--color-subtle); }
+:root[data-theme="dark"] [class~="bg-[#f8faf6]"] { background-color: var(--color-subtle); }
+:root[data-theme="dark"] [class~="bg-[#fbfcf8]"] { background-color: var(--color-surface); }
+:root[data-theme="dark"] [class~="bg-[#fbfcf8]/90"] { background-color: color-mix(in srgb, var(--color-surface) 90%, transparent); }
+:root[data-theme="dark"] .bg-slate-100,
+:root[data-theme="dark"] .bg-slate-200 { background-color: #26342d; }
+:root[data-theme="dark"] .bg-slate-400 { background-color: #78877f; }
+:root[data-theme="dark"] .bg-red-50 { background-color: #351b1d; }
+:root[data-theme="dark"] .border-red-200 { border-color: #6b3035; }
+:root[data-theme="dark"] .text-red-700,
+:root[data-theme="dark"] .text-red-800 { color: #ffb4b8; }
+:root[data-theme="dark"] .bg-emerald-50 { background-color: #132c24; }
+:root[data-theme="dark"] .border-emerald-200 { border-color: #2e614f; }
+:root[data-theme="dark"] .text-emerald-800,
+:root[data-theme="dark"] [class*="text-emerald-950"] { color: #a6e1c8; }
+:root[data-theme="dark"] .bg-amber-50,
+:root[data-theme="dark"] .bg-amber-100 { background-color: #352715; }
+:root[data-theme="dark"] .border-amber-200,
+:root[data-theme="dark"] .border-amber-300 { border-color: #765326; }
+:root[data-theme="dark"] .text-amber-800,
+:root[data-theme="dark"] .text-amber-900,
+:root[data-theme="dark"] .text-amber-950,
+:root[data-theme="dark"] [class*="text-amber-950"] { color: #f8d28c; }
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-muted);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li,
+td,
+th {
+  overflow-wrap: anywhere;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(233, 109, 80, 0.35);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: white;
+  background: #e96d50;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c6d0c9;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

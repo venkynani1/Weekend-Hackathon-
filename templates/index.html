@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="TalentGuard historical employee attrition risk analysis">
   <title>TalentGuard | Retention review</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +24,7 @@
   <main id="top">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
-        <p class="eyebrow">Historical retention review</p>
+        <p class="eyebrow">Synthetic data · hackathon prototype</p>
         <h1 id="page-title">Focus limited intervention capacity where it can matter most.</h1>
         <p class="hero-summary">This prototype ranks 1,470 historical employee records, explains the strongest actionable signals, and turns the first 10 into a focused HR action queue.</p>
         <div class="hero-actions">
@@ -34,8 +34,8 @@
       </div>
       <aside class="capacity-card" aria-label="Intervention capacity">
         <p class="card-kicker">Intervention capacity</p>
-        <strong>50</strong>
-        <span>employees per review cycle</span>
+        <strong id="hero-capacity">50</strong>
+        <span>employees in the current view</span>
         <div class="capacity-track" aria-hidden="true"><span></span></div>
         <div class="capacity-labels"><span>10 priority</span><span>40 follow-up</span></div>
         <p class="small-note">Ranking uses out-of-fold scores. It is a historical validation exercise, not a live employment decision.</p>
@@ -46,7 +46,7 @@
       <article class="metric-card">
         <span>Employees reviewed</span>
         <strong>{{ "{:,}".format(metrics.dataset.records) }}</strong>
-        <small>Complete records, no missing cells</small>
+        <small>{{ metrics.dataset.columns }} columns · {{ metrics.dataset.missing_cells }} missing cells</small>
       </article>
       <article class="metric-card">
         <span>Historical attrition</span>
@@ -111,6 +111,14 @@
           <input id="search" type="search" placeholder="Search employee, role, or action">
         </label>
         <label>
+          <span class="sr-only">Select intervention capacity</span>
+          <select id="capacity-filter">
+            <option value="10">Priority 10</option>
+            <option value="25">Top 25</option>
+            <option value="50" selected>Full Top 50</option>
+          </select>
+        </label>
+        <label>
           <span class="sr-only">Filter by department</span>
           <select id="department-filter">
             <option value="">All departments</option>
@@ -128,6 +136,26 @@
         </label>
       </div>
 
+      <div class="scenario-grid" aria-label="Selected capacity summary">
+        <article>
+          <span>Employees in view</span>
+          <strong id="scenario-employees">50</strong>
+        </article>
+        <article>
+          <span>Historical exits captured</span>
+          <strong id="scenario-exits">44</strong>
+        </article>
+        <article>
+          <span>Precision in view</span>
+          <strong id="scenario-precision">88%</strong>
+        </article>
+        <article>
+          <span>Estimated cost exposure</span>
+          <strong id="scenario-cost">—</strong>
+          <small>Demo estimate: 6× monthly income</small>
+        </article>
+      </div>
+
       <div class="table-shell">
         <table id="watchlist-table">
           <thead>
@@ -143,7 +171,7 @@
           </thead>
           <tbody>
             {% for employee in watchlist %}
-            <tr data-search="{{ employee.EmployeeNumber|int }} {{ employee.JobRole }} {{ employee.Department }} {{ employee.PrimaryAction }} {{ employee.RiskReason1 }}" data-department="{{ employee.Department }}" data-band="{{ employee.RiskBand }}">
+            <tr data-search="{{ employee.EmployeeNumber|int }} {{ employee.JobRole }} {{ employee.Department }} {{ employee.PrimaryAction }} {{ employee.RiskReason1 }}" data-department="{{ employee.Department }}" data-band="{{ employee.RiskBand }}" data-rank="{{ employee.Rank|int }}" data-outcome="{{ employee.HistoricalOutcome }}" data-monthly-income="{{ employee.MonthlyIncome }}">
               <td><span class="table-rank">{{ "%02d"|format(employee.Rank|int) }}</span></td>
               <td><strong>#{{ employee.EmployeeNumber|int }}</strong><small>{{ employee.RiskBand }}</small></td>
               <td><strong>{{ employee.JobRole }}</strong><small>{{ employee.Department }}</small></td>
@@ -170,6 +198,26 @@
         </div>
       </div>
       <div class="evidence-grid">
+        <aside class="accuracy-callout">
+          <div>
+            <span>Why not accuracy?</span>
+            <strong>{{ "{:.1%}".format(metrics.dataset.all_no_accuracy) }}</strong>
+          </div>
+          <p>An all-“No” model reaches this accuracy while identifying zero exits. The selected ROC-AUC is {{ "{:.3f}".format(metrics.selected_model_score.roc_auc) }}; a result above 0.95 would trigger a leakage audit. TalentGuard prioritizes precision at the 50-person operating capacity.</p>
+        </aside>
+
+        <article class="panel eda-panel">
+          <div class="panel-heading"><h3>Historical EDA checkpoint</h3><span>Associations, not causal effects</span></div>
+          <div class="eda-grid">
+            <div><strong>{{ "{:.1%}".format(metrics.historical_eda.overtime_yes_rate) }}</strong><span>Overtime: Yes</span><small>vs {{ "{:.1%}".format(metrics.historical_eda.overtime_no_rate) }} without overtime</small></div>
+            <div><strong>{{ "{:.1%}".format(metrics.historical_eda.sales_representative_rate) }}</strong><span>Sales Representative</span><small>highest role attrition rate</small></div>
+            <div><strong>{{ "{:.1%}".format(metrics.historical_eda.frequent_travel_rate) }}</strong><span>Frequent travel</span><small>vs {{ "{:.1%}".format(metrics.historical_eda.rare_travel_rate) }} rare travel</small></div>
+            <div><strong>{{ "{:.1%}".format(metrics.historical_eda.low_satisfaction_rate) }}</strong><span>Job satisfaction: 1/4</span><small>vs {{ "{:.1%}".format(metrics.historical_eda.high_satisfaction_rate) }} at 4/4</small></div>
+            <div><strong>{{ "{:,.0f}".format(metrics.historical_eda.attrited_income_median) }}</strong><span>Median income, exits</span><small>vs {{ "{:,.0f}".format(metrics.historical_eda.retained_income_median) }} retained</small></div>
+            <div><strong>{{ "{:.0f}".format(metrics.historical_eda.attrited_tenure_median) }} yrs</strong><span>Median tenure, exits</span><small>vs {{ "{:.0f}".format(metrics.historical_eda.retained_tenure_median) }} retained · age {{ "{:.0f}".format(metrics.historical_eda.attrited_age_median) }} vs {{ "{:.0f}".format(metrics.historical_eda.retained_age_median) }}</small></div>
+          </div>
+        </article>
+
         <article class="panel model-panel">
           <div class="panel-heading"><h3>Model comparison</h3><span>Primary metric: average precision</span></div>
           <div class="comparison-list">
@@ -178,7 +226,7 @@
               <div><strong>{{ candidate.name }}</strong>{% if loop.first %}<span class="selected-label">Selected</span>{% endif %}</div>
               <div class="comparison-bar"><span style="width: {{ candidate.average_precision * 100 }}%"></span></div>
               <strong>{{ "{:.3f}".format(candidate.average_precision) }}</strong>
-              <small>{{ "{:.0%}".format(candidate.precision_at_50) }} P@50</small>
+              <small>AUC {{ "{:.3f}".format(candidate.roc_auc) }} · {{ "{:.0%}".format(candidate.precision_at_50) }} P@50</small>
             </div>
             {% endfor %}
           </div>
@@ -214,7 +262,9 @@
         <h2>Built for review, not automatic employment decisions.</h2>
       </div>
       <div class="methodology-copy">
-        <p>The selected model is compared with two alternatives using out-of-fold average precision and capacity metrics. Sensitive demographic fields, constants, and the employee identifier are excluded from training.</p>
+        <p>The selected model is compared with two alternatives using out-of-fold average precision and capacity metrics. The logistic baseline uses balanced class weights. Sensitive demographic fields, constants, and the employee identifier are excluded from training.</p>
+        <p>The imputer, scaler, and one-hot encoder live inside each model pipeline and are fit only on the training fold. Validation rows never fit preprocessing. Row-wise engineered features use no workforce-level statistics.</p>
+        <p>Overtime and the other drivers are predictive associations, not proven causes. A workload intervention is a hypothesis to test with an ethical pilot and measured outcomes, not an automatic prescription.</p>
         <p>Risk reasons are local counterfactual contributions: each feature is replaced with the workforce median or mode and the score change is measured. Scores support ranking within this dataset and should not be interpreted as calibrated future probabilities.</p>
         <p>The IBM dataset is synthetic and historical. Before real use, TalentGuard would require current pre-decision data, calibration, fairness testing, privacy controls, monitoring, and qualified human review.</p>
       </div>
@@ -235,6 +285,6 @@
   </dialog>
 
   <script id="watchlist-data" type="application/json">{{ watchlist|tojson }}</script>
-  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
