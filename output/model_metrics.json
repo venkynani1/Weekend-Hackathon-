@@ -1,0 +1,158 @@
+{
+  "dataset": {
+    "records": 1470,
+    "columns": 35,
+    "attrition_count": 237,
+    "attrition_rate": 0.16122448979591836,
+    "missing_cells": 0
+  },
+  "selected_model": "Logistic regression",
+  "selection_metric": "Five-fold out-of-fold average precision",
+  "selected_model_score": {
+    "name": "Logistic regression",
+    "average_precision": 0.5871567546561374,
+    "roc_auc": 0.820950581922586,
+    "f1_at_capacity": 0.30662020905923343,
+    "recall_at_capacity": 0.18565400843881857,
+    "precision_at_50": 0.88,
+    "recall_at_50": 0.18565400843881857,
+    "lift_at_50": 5.4582278481012665,
+    "capacity_threshold": 0.9125406372666955
+  },
+  "candidate_scores": [
+    {
+      "name": "Logistic regression",
+      "average_precision": 0.5871567546561374,
+      "roc_auc": 0.820950581922586,
+      "f1_at_capacity": 0.30662020905923343,
+      "recall_at_capacity": 0.18565400843881857,
+      "precision_at_50": 0.88,
+      "recall_at_50": 0.18565400843881857,
+      "lift_at_50": 5.4582278481012665,
+      "capacity_threshold": 0.9125406372666955
+    },
+    {
+      "name": "Random forest",
+      "average_precision": 0.54992612651648,
+      "roc_auc": 0.8046546962743951,
+      "f1_at_capacity": 0.2857142857142857,
+      "recall_at_capacity": 0.1729957805907173,
+      "precision_at_50": 0.82,
+      "recall_at_50": 0.1729957805907173,
+      "lift_at_50": 5.086075949367088,
+      "capacity_threshold": 0.6512662020973236
+    },
+    {
+      "name": "Gradient boosted trees",
+      "average_precision": 0.5157893856872994,
+      "roc_auc": 0.7885675567464351,
+      "f1_at_capacity": 0.27177700348432055,
+      "recall_at_capacity": 0.16455696202531644,
+      "precision_at_50": 0.78,
+      "recall_at_50": 0.16455696202531644,
+      "lift_at_50": 4.837974683544304,
+      "capacity_threshold": 0.8631269932386554
+    }
+  ],
+  "holdout": {
+    "test_records": 294,
+    "capacity": 10,
+    "average_precision": 0.5477553915779931,
+    "roc_auc": 0.791541045740374,
+    "precision_at_capacity": 1.0,
+    "recall_at_capacity": 0.2127659574468085,
+    "lift_at_capacity": 6.25531914893617,
+    "confusion_matrix": [
+      [
+        247,
+        0
+      ],
+      [
+        37,
+        10
+      ]
+    ]
+  },
+  "department_summary": [
+    {
+      "department": "Sales",
+      "employees": 446,
+      "historical_attrition_rate": 0.2062780269058296,
+      "average_risk": 0.43262350529849314,
+      "watchlist_count": 26
+    },
+    {
+      "department": "Research & Development",
+      "employees": 961,
+      "historical_attrition_rate": 0.1383975026014568,
+      "average_risk": 0.33120264439483993,
+      "watchlist_count": 22
+    },
+    {
+      "department": "Human Resources",
+      "employees": 63,
+      "historical_attrition_rate": 0.19047619047619047,
+      "average_risk": 0.38618377034857243,
+      "watchlist_count": 2
+    }
+  ],
+  "driver_summary": [
+    {
+      "feature": "OverTime",
+      "label": "Overtime",
+      "count": 34
+    },
+    {
+      "feature": "YearsInCurrentRole",
+      "label": "Time in current role",
+      "count": 31
+    },
+    {
+      "feature": "TotalWorkingYears",
+      "label": "Career tenure",
+      "count": 19
+    },
+    {
+      "feature": "EnvironmentSatisfaction",
+      "label": "Environment satisfaction",
+      "count": 17
+    },
+    {
+      "feature": "JobInvolvement",
+      "label": "Job involvement",
+      "count": 10
+    },
+    {
+      "feature": "BusinessTravel",
+      "label": "Business travel",
+      "count": 10
+    },
+    {
+      "feature": "NumCompaniesWorked",
+      "label": "Prior companies",
+      "count": 8
+    },
+    {
+      "feature": "YearsAtCompany",
+      "label": "Company tenure",
+      "count": 5
+    }
+  ],
+  "methodology": {
+    "cross_validation_folds": 5,
+    "capacity": 50,
+    "priority_capacity": 10,
+    "excluded_columns": [
+      "Attrition",
+      "EmployeeNumber",
+      "EmployeeCount",
+      "Over18",
+      "StandardHours",
+      "Age",
+      "Gender",
+      "MaritalStatus"
+    ],
+    "explanation_method": "Counterfactual feature replacement against workforce medians or modes",
+    "scope": "Historical demonstration using the IBM HR attrition dataset"
+  }
+}

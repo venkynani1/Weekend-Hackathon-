@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TalentGuard historical employee attrition risk analysis">
+  <title>TalentGuard | Retention review</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="TalentGuard home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>TalentGuard</span>
+    </a>
+    <nav aria-label="Dashboard sections">
+      <a href="#priority">Priority 10</a>
+      <a href="#watchlist">Watch list</a>
+      <a href="#evidence">Model evidence</a>
+    </nav>
+    <a class="button button-light" href="{{ url_for('download_watchlist') }}">Export watch list</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Historical retention review</p>
+        <h1 id="page-title">Focus limited intervention capacity where it can matter most.</h1>
+        <p class="hero-summary">This prototype ranks 1,470 historical employee records, explains the strongest actionable signals, and turns the first 10 into a focused HR action queue.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#priority">Review priority employees</a>
+          <a class="text-link" href="#methodology">Read the methodology</a>
+        </div>
+      </div>
+      <aside class="capacity-card" aria-label="Intervention capacity">
+        <p class="card-kicker">Intervention capacity</p>
+        <strong>50</strong>
+        <span>employees per review cycle</span>
+        <div class="capacity-track" aria-hidden="true"><span></span></div>
+        <div class="capacity-labels"><span>10 priority</span><span>40 follow-up</span></div>
+        <p class="small-note">Ranking uses out-of-fold scores. It is a historical validation exercise, not a live employment decision.</p>
+      </aside>
+    </section>
+
+    <section class="metrics-grid" aria-label="Key model and dataset metrics">
+      <article class="metric-card">
+        <span>Employees reviewed</span>
+        <strong>{{ "{:,}".format(metrics.dataset.records) }}</strong>
+        <small>Complete records, no missing cells</small>
+      </article>
+      <article class="metric-card">
+        <span>Historical attrition</span>
+        <strong>{{ "{:.1%}".format(metrics.dataset.attrition_rate) }}</strong>
+        <small>{{ metrics.dataset.attrition_count }} observed exits</small>
+      </article>
+      <article class="metric-card accent-card">
+        <span>Precision in Top 50</span>
+        <strong>{{ "{:.0%}".format(metrics.selected_model_score.precision_at_50) }}</strong>
+        <small>{{ "{:.1f}".format(metrics.selected_model_score.lift_at_50) }}× lift over base rate</small>
+      </article>
+      <article class="metric-card">
+        <span>Average precision</span>
+        <strong>{{ "{:.3f}".format(metrics.selected_model_score.average_precision) }}</strong>
+        <small>{{ metrics.selected_model }}</small>
+      </article>
+    </section>
+
+    <section id="priority" class="section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">First intervention queue</p>
+          <h2>Priority 10</h2>
+          <p>Specific next steps based on each employee's strongest model contributions.</p>
+        </div>
+        <a class="button button-outline" href="{{ url_for('download_top_ten') }}">Download action plan</a>
+      </div>
+      <div class="priority-grid">
+        {% for employee in top_ten %}
+        <article class="priority-card">
+          <div class="priority-topline">
+            <span class="rank-number">{{ "%02d"|format(employee.Rank|int) }}</span>
+            <span class="risk-pill">{{ "{:.0%}".format(employee.RiskScore) }} score</span>
+          </div>
+          <h3>Employee {{ employee.EmployeeNumber|int }}</h3>
+          <p class="role-line">{{ employee.JobRole }} · {{ employee.Department }}</p>
+          <p class="reason-line">{{ employee.RiskReason1 }}</p>
+          <div class="action-callout">
+            <span>First action</span>
+            <strong>{{ employee.PrimaryAction }}</strong>
+          </div>
+          <button class="card-link" type="button" data-employee="{{ employee.EmployeeNumber|int }}">View full action plan</button>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="watchlist" class="section-block watchlist-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Capacity-ranked review</p>
+          <h2>Top 50 watch list</h2>
+          <p>Search and filter the ranked intervention list. Select a row for the complete evidence and recommendation.</p>
+        </div>
+        <p class="result-count" aria-live="polite"><strong id="visible-count">50</strong> records shown</p>
+      </div>
+
+      <div class="filter-bar" aria-label="Watch list filters">
+        <label class="search-control">
+          <span class="sr-only">Search employees, roles, or actions</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="search" type="search" placeholder="Search employee, role, or action">
+        </label>
+        <label>
+          <span class="sr-only">Filter by department</span>
+          <select id="department-filter">
+            <option value="">All departments</option>
+            {% for department in departments %}<option value="{{ department }}">{{ department }}</option>{% endfor %}
+          </select>
+        </label>
+        <label>
+          <span class="sr-only">Filter by risk band</span>
+          <select id="band-filter">
+            <option value="">All risk bands</option>
+            <option value="Priority">Priority 1–10</option>
+            <option value="High">High 11–25</option>
+            <option value="Elevated">Elevated 26–50</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="table-shell">
+        <table id="watchlist-table">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Employee</th>
+              <th scope="col">Role</th>
+              <th scope="col">Risk score</th>
+              <th scope="col">Leading driver</th>
+              <th scope="col">Recommended first action</th>
+              <th scope="col"><span class="sr-only">Details</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for employee in watchlist %}
+            <tr data-search="{{ employee.EmployeeNumber|int }} {{ employee.JobRole }} {{ employee.Department }} {{ employee.PrimaryAction }} {{ employee.RiskReason1 }}" data-department="{{ employee.Department }}" data-band="{{ employee.RiskBand }}">
+              <td><span class="table-rank">{{ "%02d"|format(employee.Rank|int) }}</span></td>
+              <td><strong>#{{ employee.EmployeeNumber|int }}</strong><small>{{ employee.RiskBand }}</small></td>
+              <td><strong>{{ employee.JobRole }}</strong><small>{{ employee.Department }}</small></td>
+              <td>
+                <div class="risk-value"><strong>{{ "{:.0%}".format(employee.RiskScore) }}</strong><span class="mini-track"><i style="width: {{ employee.RiskScore * 100 }}%"></i></span></div>
+              </td>
+              <td>{{ employee.RiskReason1 }}</td>
+              <td><span class="action-tag">{{ employee.PrimaryAction }}</span></td>
+              <td><button class="icon-button" type="button" data-employee="{{ employee.EmployeeNumber|int }}" aria-label="View Employee {{ employee.EmployeeNumber|int }} details">↗</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <p id="empty-state" class="empty-state" hidden>No employees match these filters.</p>
+      </div>
+    </section>
+
+    <section id="evidence" class="section-block evidence-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Validation evidence</p>
+          <h2>Why this ranking was selected</h2>
+          <p>All candidate scores come from the same five stratified out-of-fold splits.</p>
+        </div>
+      </div>
+      <div class="evidence-grid">
+        <article class="panel model-panel">
+          <div class="panel-heading"><h3>Model comparison</h3><span>Primary metric: average precision</span></div>
+          <div class="comparison-list">
+            {% for candidate in metrics.candidate_scores %}
+            <div class="comparison-row {% if loop.first %}winner{% endif %}">
+              <div><strong>{{ candidate.name }}</strong>{% if loop.first %}<span class="selected-label">Selected</span>{% endif %}</div>
+              <div class="comparison-bar"><span style="width: {{ candidate.average_precision * 100 }}%"></span></div>
+              <strong>{{ "{:.3f}".format(candidate.average_precision) }}</strong>
+              <small>{{ "{:.0%}".format(candidate.precision_at_50) }} P@50</small>
+            </div>
+            {% endfor %}
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading"><h3>Watch-list mix</h3><span>Employees by department</span></div>
+          <div class="department-list">
+            {% set max_watchlist = metrics.department_summary|map(attribute='watchlist_count')|max %}
+            {% for item in metrics.department_summary %}
+            <div class="department-row">
+              <div><strong>{{ item.department }}</strong><span>{{ item.watchlist_count }} of {{ item.employees }}</span></div>
+              <div class="department-track"><span style="width: {{ item.watchlist_count / max_watchlist * 100 }}%"></span></div>
+            </div>
+            {% endfor %}
+          </div>
+        </article>
+
+        <article class="panel driver-panel">
+          <div class="panel-heading"><h3>Common risk drivers</h3><span>Appearances in Top-50 explanations</span></div>
+          <div class="driver-cloud">
+            {% for driver in metrics.driver_summary %}
+            <div><strong>{{ driver.count }}</strong><span>{{ driver.label }}</span></div>
+            {% endfor %}
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="methodology" class="methodology-section">
+      <div>
+        <p class="eyebrow">Method and safeguards</p>
+        <h2>Built for review, not automatic employment decisions.</h2>
+      </div>
+      <div class="methodology-copy">
+        <p>The selected model is compared with two alternatives using out-of-fold average precision and capacity metrics. Sensitive demographic fields, constants, and the employee identifier are excluded from training.</p>
+        <p>Risk reasons are local counterfactual contributions: each feature is replaced with the workforce median or mode and the score change is measured. Scores support ranking within this dataset and should not be interpreted as calibrated future probabilities.</p>
+        <p>The IBM dataset is synthetic and historical. Before real use, TalentGuard would require current pre-decision data, calibration, fairness testing, privacy controls, monitoring, and qualified human review.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>TalentGuard</span>
+    <p>Historical retention-risk prototype · {{ metrics.selected_model }}</p>
+  </footer>
+
+  <dialog id="employee-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header">
+      <div><p class="eyebrow">Employee review</p><h2 id="dialog-title">Employee</h2></div>
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Close details">×</button>
+    </div>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script id="watchlist-data" type="application/json">{{ watchlist|tojson }}</script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
