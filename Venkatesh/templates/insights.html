@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Evidence, data traps and business case{% endblock %}
+{% block description %}Six evidence-backed attrition findings, the data traps we removed, baselines the model must beat, a bias audit and the money behind a 50-person retention cycle.{% endblock %}
+{% set biz = ins.business %}
+{% set sel = metrics.selected_model_score %}
+{% block content %}
+<section class="page-intro">
+  <p class="eyebrow">Evidence</p>
+  <h1>Every number behind the watch list.</h1>
+  <p class="hero-summary">All scores on this page are out-of-fold: each employee was scored by a model that never saw them during training.</p>
+  <nav class="jump-links" aria-label="On this page">
+    <a href="#framing">Business framing</a>
+    <a href="#findings">Findings</a>
+    <a href="#traps">Data traps</a>
+    <a href="#baselines">Baselines</a>
+    <a href="#capacity">Capacity</a>
+    <a href="#fairness">Bias audit</a>
+    <a href="#business">Money</a>
+    <a href="#causal">Causality</a>
+  </nav>
+</section>
+
+<section id="framing" class="section-block framing">
+  <div class="framing-grid">
+    <div>
+      <p class="eyebrow">The decision</p>
+      <h2>Which 50 people get a retention conversation this cycle?</h2>
+    </div>
+    <dl class="framing-list">
+      <div><dt>Client</dt><dd>TechNova Solutions, 12,000 staff, losing 16% a year.</dd></div>
+      <div><dt>Constraint</dt><dd>HR can hold 50 retention talks per cycle. That is the operating point, so the model is judged at the top 50, not at a 0.5 threshold.</dd></div>
+      <div><dt>Business metric</dt><dd>Replacement cost avoided per cycle. Each exit costs 6 to 9 months of salary; we use 7.5.</dd></div>
+      <div><dt>Model metric</dt><dd>Precision at 50 and average precision (PR-AUC). Accuracy is ignored because only {{ "{:.1%}".format(metrics.dataset.attrition_rate) }} leave.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="findings" class="section-block">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Exploratory analysis</p>
+      <h2>Six findings, each with the number that proves it</h2>
+    </div>
+  </div>
+  <div class="findings-list">
+    {% for f in ins.eda.findings %}
+    <article class="finding">
+      <span class="finding-number">{{ "%02d"|format(loop.index) }}</span>
+      <div class="finding-body">
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.evidence }}</p>
+        <p class="so-what"><strong>So what:</strong> {{ f.so_what }}</p>
+      </div>
+      {% set top = f.chart|map(attribute='value')|max %}
+      <div class="finding-chart" role="img" aria-label="{{ f.title }}: {% for c in f.chart %}{{ c.label }} {{ '{:,.0f}'.format(c.value) if f.money else '{:.0%}'.format(c.value) }}{{ ', ' if not loop.last }}{% endfor %}">
+        {% for c in f.chart %}
+        <div class="bar-row">
+          <span>{{ c.label }}</span>
+          <span class="bar"><i style="width: {{ (c.value / top * 100)|round(1) }}%"></i></span>
+          <strong>{{ '{:,.0f}'.format(c.value) if f.money else '{:.0%}'.format(c.value) }}</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="traps" class="section-block muted-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Hidden data traps</p>
+      <h2>What we found and removed before modelling</h2>
+    </div>
+  </div>
+  <div class="table-shell">
+    <table class="plain-table">
+      <thead><tr><th scope="col">Trap</th><th scope="col">What is wrong</th><th scope="col">How we handled it</th></tr></thead>
+      <tbody>
+        {% for t in ins.eda.traps %}
+        <tr><th scope="row">{{ t.trap }}</th><td>{{ t.detail }}</td><td>{{ t.handling }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="baselines" class="section-block">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Model versus baselines</p>
+      <h2>The model has to beat a simple HR rule, not just a coin flip</h2>
+      <p>Same 1,470 employees, same 50-person capacity. "Caught" is how many of the 50 flagged people really left.</p>
+    </div>
+  </div>
+  <div class="table-shell">
+    <table class="plain-table numeric">
+      <thead><tr><th scope="col">Approach</th><th scope="col">Type</th><th scope="col">Caught of 50</th><th scope="col">Precision at 50</th><th scope="col">PR-AUC</th><th scope="col">ROC-AUC</th><th scope="col">Note</th></tr></thead>
+      <tbody>
+        {% for b in ins.baselines %}
+        <tr {% if b.kind == 'ML (selected)' %}class="row-highlight"{% endif %}>
+          <th scope="row">{{ b.name }}</th><td>{{ b.kind }}</td><td><strong>{{ b.caught_of_50 }}</strong></td>
+          <td>{{ "{:.0%}".format(b.precision_at_50) }}</td><td>{{ "%.3f"|format(b.average_precision) }}</td>
+          <td>{{ "%.3f"|format(b.roc_auc) }}</td><td>{{ b.note }}{% if b.accuracy %} Accuracy {{ "{:.1%}".format(b.accuracy) }}.{% endif %}</td>
+        </tr>
+        {% endfor %}
+        {% for c in metrics.candidate_scores[1:] %}
+        <tr><th scope="row">{{ c.name }}</th><td>ML (not selected)</td><td>{{ (c.precision_at_50 * 50)|round|int }}</td>
+          <td>{{ "{:.0%}".format(c.precision_at_50) }}</td><td>{{ "%.3f"|format(c.average_precision) }}</td><td>{{ "%.3f"|format(c.roc_auc) }}</td><td>Out-of-fold scores.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="callout-grid">
+    <p><strong>Honest result.</strong> Class-weighted logistic regression beat random forest and gradient boosting on PR-AUC. On 1,470 rows the simple model generalises better, and every coefficient can be explained to HR.</p>
+    <p><strong>Holdout check.</strong> A separate 20% stratified holdout gives PR-AUC {{ "%.3f"|format(metrics.holdout.average_precision) }} and {{ "{:.0%}".format(metrics.holdout.precision_at_capacity) }} precision at the scaled capacity of {{ metrics.holdout.capacity }}.</p>
+    <p><strong>Leakage audit.</strong> {{ ins.leakage.verdict }} Strongest single column: {{ ins.leakage.top_single_features[0].feature }} at {{ "%.2f"|format(ins.leakage.top_single_features[0].auc) }}.</p>
+  </div>
+</section>
+
+<section id="capacity" class="section-block muted-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Operating point</p>
+      <h2>What happens if HR capacity changes</h2>
+      <p>The model is tuned to 50 talks. If HR gets budget for more, precision falls slowly while the number of leavers reached keeps climbing.</p>
+    </div>
+  </div>
+  <div class="capacity-chart" role="img" aria-label="Precision and leavers reached at different capacities">
+    {% for c in ins.capacity_curve %}
+    <div class="capacity-col {% if c.k == 50 %}is-current{% endif %}">
+      <span class="cap-value">{{ "{:.0%}".format(c.precision) }}</span>
+      <span class="cap-bar"><i style="height: {{ (c.precision * 100)|round(1) }}%"></i></span>
+      <strong>{{ c.k }}</strong>
+      <small>{{ c.caught }} leavers</small>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="chart-caption">Bar height is precision (share of flagged employees who really left). Label under each bar is capacity, then leavers reached. The highlighted bar is HR's current capacity.</p>
+
+  <h3 class="sub-heading">Score deciles</h3>
+  <div class="table-shell">
+    <table class="plain-table numeric">
+      <thead><tr><th scope="col">Score decile</th><th scope="col">Employees</th><th scope="col">Actually left</th><th scope="col">Leave rate</th><th scope="col">Share of all leavers found so far</th></tr></thead>
+      <tbody>
+        {% for g in ins.gains %}
+        <tr><th scope="row">{{ g.decile }}{% if g.decile == 1 %} (highest risk){% endif %}</th><td>{{ g.employees }}</td><td>{{ g.leavers }}</td><td>{{ "{:.0%}".format(g.leave_rate) }}</td><td>{{ "{:.0%}".format(g.cumulative_capture) }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="fairness" class="section-block">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Bias audit</p>
+      <h2>Who lands on the list, and is it equally accurate for them?</h2>
+      <p>Age, gender and marital status are never used by the model. We use them only here, to check the output. If the list skews further than real attrition does, a reviewer should know.</p>
+    </div>
+  </div>
+  <div class="fairness-grid">
+    {% for a in ins.fairness %}
+    <div class="table-shell">
+      <table class="plain-table numeric">
+        <caption>{{ a.attribute }}</caption>
+        <thead><tr><th scope="col">Group</th><th scope="col">Workforce</th><th scope="col">Real leavers</th><th scope="col">Watch list</th><th scope="col">Precision on list</th></tr></thead>
+        <tbody>
+          {% for g in a.groups %}
+          {% set over = g.watchlist_share - g.leaver_share %}
+          <tr>
+            <th scope="row">{{ g.group }}</th><td>{{ "{:.0%}".format(g.workforce_share) }}</td><td>{{ "{:.0%}".format(g.leaver_share) }}</td>
+            <td {% if over > 0.08 %}class="flag"{% endif %}>{{ "{:.0%}".format(g.watchlist_share) }}</td>
+            <td>{{ "{:.0%}".format(g.precision_on_list) if g.precision_on_list is not none else "n/a" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="callout-grid">
+    <p><strong>Gender is balanced.</strong> The list mirrors the share of real leavers.</p>
+    <p><strong>Under-30 and single employees are over-represented</strong> beyond their share of real leavers (cells marked). Tenure and stock options act as proxies. The list is still accurate for them, but reviewers are told to check that older staff with real risk are not crowded out.</p>
+    <p><strong>Policy.</strong> No automated decision is ever made on an employee. The list only decides who gets offered a conversation.</p>
+  </div>
+</section>
+
+<section id="business" class="section-block value-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Business case</p>
+      <h2>Change the assumptions. The answer updates.</h2>
+      <p>Defaults come from the brief (6 to 9 months of salary per exit) or are stated assumptions. Salaries are the dataset's monthly income values.</p>
+    </div>
+  </div>
+  <div class="calculator" id="calculator"
+       data-leavers="{{ biz.cycle.leavers_reached }}"
+       data-cost-reached="{{ biz.cycle.replacement_cost_reached }}"
+       data-base-months="{{ biz.assumptions.replacement_cost_months }}"
+       data-median-income="{{ biz.assumptions.median_monthly_income }}"
+       data-random-leavers="{{ biz.cycle.leavers_reached_random }}"
+       data-avg-leaver-cost="{{ biz.cycle.random_gross_savings / biz.cycle.leavers_reached_random / biz.assumptions.save_rate }}">
+    <form class="calc-inputs" aria-label="Business assumptions">
+      <label>Share of real leavers a talk keeps
+        <input type="range" name="save" min="5" max="60" step="5" value="{{ (biz.assumptions.save_rate * 100)|int }}"><output>{{ (biz.assumptions.save_rate * 100)|int }}%</output></label>
+      <label>Months of salary to replace one person
+        <input type="range" name="months" min="6" max="9" step="0.5" value="{{ biz.assumptions.replacement_cost_months }}"><output>{{ biz.assumptions.replacement_cost_months }}</output></label>
+      <label>Cost of one retention talk, in months of median salary
+        <input type="range" name="talk" min="0.05" max="1" step="0.05" value="{{ biz.assumptions.cost_per_talk_months }}"><output>{{ biz.assumptions.cost_per_talk_months }}</output></label>
+      <label>Review cycles per year
+        <input type="range" name="cycles" min="1" max="12" step="1" value="{{ biz.assumptions.cycles_per_year }}"><output>{{ biz.assumptions.cycles_per_year }}</output></label>
+    </form>
+    <dl class="calc-results" aria-live="polite">
+      <div><dt>People kept per cycle</dt><dd data-out="saves"></dd></div>
+      <div><dt>Net savings per cycle</dt><dd data-out="net"></dd></div>
+      <div><dt>Net savings per year</dt><dd data-out="year"></dd></div>
+      <div><dt>Return on HR time</dt><dd data-out="roi"></dd></div>
+      <div><dt>Same effort on a random 50</dt><dd data-out="random"></dd></div>
+    </dl>
+  </div>
+
+  {% set cw = ins.cost_weighted %}
+  <h3 class="sub-heading">Two ways to fill the 50 slots</h3>
+  <div class="mode-compare">
+    <div>
+      <p class="mode-label">Headcount mode (current list)</p>
+      <p>Rank by probability of leaving.</p>
+      <dl><div><dt>Real leavers reached</dt><dd>{{ cw.by_risk.leavers_reached }}</dd></div>
+          <div><dt>Replacement cost reached</dt><dd>{{ "${:,.0f}".format(cw.by_risk.replacement_cost_reached) }}</dd></div>
+          <div><dt>Average monthly salary on list</dt><dd>{{ "${:,.0f}".format(cw.by_risk.avg_salary_on_list) }}</dd></div></dl>
+    </div>
+    <div>
+      <p class="mode-label">Value mode</p>
+      <p>Rank by expected loss: leave probability times replacement cost.</p>
+      <dl><div><dt>Real leavers reached</dt><dd>{{ cw.by_value.leavers_reached }}</dd></div>
+          <div><dt>Replacement cost reached</dt><dd>{{ "${:,.0f}".format(cw.by_value.replacement_cost_reached) }}</dd></div>
+          <div><dt>Average monthly salary on list</dt><dd>{{ "${:,.0f}".format(cw.by_value.avg_salary_on_list) }}</dd></div></dl>
+    </div>
+  </div>
+  <p class="chart-caption">Value mode reaches {{ "{:.0%}".format(cw.uplift_pct) }} more replacement cost with the same 50 talks, but half as many people. Which mode to run is a leadership choice: protect headcount in junior delivery roles, or protect the most expensive knowledge. We recommend headcount mode for the default list and a value-mode review for senior staff.</p>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Policy-level hotspots</p>
+      <h2>Some problems are bigger than one conversation</h2>
+      <p>When a whole role is on the list, the fix is a policy (pay mix, overtime rules, career ladder), not 50 separate talks.</p>
+    </div>
+  </div>
+  <div class="table-shell">
+    <table class="plain-table numeric">
+      <thead><tr><th scope="col">Job role</th><th scope="col">Headcount</th><th scope="col">Historical attrition</th><th scope="col">On overtime</th><th scope="col">On watch list</th></tr></thead>
+      <tbody>
+        {% for r in ins.role_hotspots %}
+        <tr><th scope="row">{{ r.role }}</th><td>{{ r.headcount }}</td><td {% if r.attrition > 0.2 %}class="flag"{% endif %}>{{ "{:.0%}".format(r.attrition) }}</td><td>{{ "{:.0%}".format(r.overtime_share) }}</td><td>{{ r.on_list }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="causal" class="methodology-section">
+  <div>
+    <p class="eyebrow">Is overtime causal?</p>
+    <h2>Predictive, not proven causal. Here is how we would prove it.</h2>
+  </div>
+  <div class="methodology-copy">
+    <p>Overtime predicts exits strongly, but a model trained on history cannot tell us that removing overtime keeps people. Burned-out teams may both work late and leave for a third reason.</p>
+    <p>Test design: each cycle, randomly split the 50 flagged employees into two groups of 25. Group A gets the talk in week 1, group B in week 6. Compare 90-day exits. Nobody is denied help; only timing changes, and the difference is the causal effect of the intervention.</p>
+    <p>A second, free check: employees ranked 45 to 50 and 51 to 56 are almost identical in risk but only the first group gets a talk. Comparing their outcomes over several cycles estimates the effect without any extra cost.</p>
+    <p>Until that evidence exists, the save rate on this page is an assumption, and we show what happens when it is lower.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='insights.js') }}" defer></script>
+{% endblock %}

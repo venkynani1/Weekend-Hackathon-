@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "TG-622",
+    "employee_number": 622,
+    "rank": 1,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 16804.181076024564,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #622, Laboratory Technician (Research & Development). Watch-list rank 1 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Job involvement is low (1/4)\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity. Confirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-478",
+    "employee_number": 478,
+    "rank": 2,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 15473.213113366244,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #478, Sales Representative (Sales). Watch-list rank 2 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Run a confidential stay interview and agree on two changes the manager can track. Discuss travel expectations, scheduling, and feasible flexibility options. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1494",
+    "employee_number": 1494,
+    "rank": 3,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 22151.60444061995,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1494, Laboratory Technician (Research & Development). Watch-list rank 3 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Discuss travel expectations, scheduling, and feasible flexibility options. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1273",
+    "employee_number": 1273,
+    "rank": 4,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 7540.240417535285,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1273, Sales Representative (Sales). Watch-list rank 4 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Job involvement is low (1/4)\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity. Confirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1767",
+    "employee_number": 1767,
+    "rank": 5,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 16418.89657301096,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1767, Research Scientist (Research & Development). Watch-list rank 5 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. The employee has worked at 9 companies\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1487",
+    "employee_number": 1487,
+    "rank": 6,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Manager stay interview",
+    "owner": "Skip-level manager",
+    "sla_days": 10,
+    "value_at_risk": 37700.60255007993,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1487, Sales Executive (Sales). Watch-list rank 6 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Work environment satisfaction is low (1/4)\n  2. Business travel pattern is travel frequently\n  3. The employee has worked at 5 companies\n\nRecommended intervention: Manager stay interview\nRun a confidential stay interview and agree on two changes the manager can track. Discuss travel expectations, scheduling, and feasible flexibility options. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Ask: what would make you leave, and what would make you stay?\n  - Listen first; do not defend.\n  - Commit to two changes and track them openly.\n\nOwner: Skip-level manager. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about what keeps you here and what we could do better",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about what keeps you here and what we could do better. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1758",
+    "employee_number": 1758,
+    "rank": 7,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 54498.92411715484,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1758, Sales Executive (Sales). Watch-list rank 7 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Work environment satisfaction is low (1/4)\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Run a confidential stay interview and agree on two changes the manager can track. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1108",
+    "employee_number": 1108,
+    "rank": 8,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 14475.768942549994,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1108, Research Scientist (Research & Development). Watch-list rank 8 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Commute distance is 25 distance units\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Run a confidential stay interview and agree on two changes the manager can track. Discuss travel expectations, scheduling, and feasible flexibility options. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-614",
+    "employee_number": 614,
+    "rank": 9,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11596.784688751746,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #614, Sales Representative (Sales). Watch-list rank 9 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 0 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1624",
+    "employee_number": 1624,
+    "rank": 10,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 9603.877070110477,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1624, Sales Representative (Sales). Watch-list rank 10 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 0 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths. Review recurring overtime, rebalance near-term workload, and agree on sustainable working norms. Assign an HR partner and complete the first check-in within two weeks.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1944",
+    "employee_number": 1944,
+    "rank": 11,
+    "job_role": "Human Resources",
+    "department": "Human Resources",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 17178.22005297287,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1944, Human Resources (Human Resources). Watch-list rank 11 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Work environment satisfaction is low (1/4)\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1928",
+    "employee_number": 1928,
+    "rank": 12,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 6529.6948268783,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1928, Sales Representative (Sales). Watch-list rank 12 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Total career tenure is 1 years\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-911",
+    "employee_number": 911,
+    "rank": 13,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 16555.053704235386,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #911, Laboratory Technician (Research & Development). Watch-list rank 13 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Work environment satisfaction is low (1/4)\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-167",
+    "employee_number": 167,
+    "rank": 14,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 9845.040088566515,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #167, Sales Representative (Sales). Watch-list rank 14 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 0 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-554",
+    "employee_number": 554,
+    "rank": 15,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Compensation review",
+    "owner": "HR Business Partner + Compensation",
+    "sla_days": 10,
+    "value_at_risk": 18698.968224956225,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #554, Sales Representative (Sales). Watch-list rank 15 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Stock option level is 0 compared with a workforce baseline of 1\n\nRecommended intervention: Compensation review\nReview pay positioning and total rewards against the role's internal band.\n\nTalking points:\n  - Ask how they see their pay and total reward compared with the market.\n  - Share what is possible this cycle (band review, stock, allowance) without promising a number.\n  - Agree a date to come back with a concrete answer.\n\nOwner: HR Business Partner + Compensation. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your role, growth and reward",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your role, growth and reward. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-514",
+    "employee_number": 514,
+    "rank": 16,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 13200.911358430334,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #514, Research Scientist (Research & Development). Watch-list rank 16 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. The employee has worked at 9 companies\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-590",
+    "employee_number": 590,
+    "rank": 17,
+    "job_role": "Human Resources",
+    "department": "Human Resources",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 56787.86654093978,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #590, Human Resources (Human Resources). Watch-list rank 17 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. The employee has worked at 9 companies\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-436",
+    "employee_number": 436,
+    "rank": 18,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 29657.252462698005,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #436, Sales Executive (Sales). Watch-list rank 18 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Company tenure is 13 years\n  2. Regular overtime increases workload and burnout exposure\n  3. It has been 11 years since the last promotion\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-47",
+    "employee_number": 47,
+    "rank": 19,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 15185.598696815234,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #47, Sales Representative (Sales). Watch-list rank 19 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Total career tenure is 3 years\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-235",
+    "employee_number": 235,
+    "rank": 20,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 13156.53934251235,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #235, Sales Representative (Sales). Watch-list rank 20 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Job involvement is low (1/4)\n  3. Total career tenure is 1 years\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-19",
+    "employee_number": 19,
+    "rank": 21,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11291.018176996555,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #19, Laboratory Technician (Research & Development). Watch-list rank 21 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Commute distance is 24 distance units\n  3. The employee has worked at 5 companies\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-33",
+    "employee_number": 33,
+    "rank": 22,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 21622.290427196134,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #33, Research Scientist (Research & Development). Watch-list rank 22 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Job involvement is low (1/4)\n  3. It has been 6 years since the last promotion\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1439",
+    "employee_number": 1439,
+    "rank": 23,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Compensation review",
+    "owner": "HR Business Partner + Compensation",
+    "sla_days": 10,
+    "value_at_risk": 24252.76714230144,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1439, Sales Representative (Sales). Watch-list rank 23 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Work environment satisfaction is low (1/4)\n  2. Job satisfaction is low (1/4)\n  3. Stock option level is 0 compared with a workforce baseline of 1\n\nRecommended intervention: Compensation review\nReview pay positioning and total rewards against the role's internal band.\n\nTalking points:\n  - Ask how they see their pay and total reward compared with the market.\n  - Share what is possible this cycle (band review, stock, allowance) without promising a number.\n  - Agree a date to come back with a concrete answer.\n\nOwner: HR Business Partner + Compensation. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your role, growth and reward",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your role, growth and reward. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-960",
+    "employee_number": 960,
+    "rank": 24,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 16236.291197769919,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #960, Laboratory Technician (Research & Development). Watch-list rank 24 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Work environment satisfaction is low (1/4)\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-959",
+    "employee_number": 959,
+    "rank": 25,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11551.032816275858,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #959, Sales Representative (Sales). Watch-list rank 25 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-2023",
+    "employee_number": 2023,
+    "rank": 26,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 9670.097040148587,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #2023, Sales Representative (Sales). Watch-list rank 26 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Total career tenure is 1 years\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-261",
+    "employee_number": 261,
+    "rank": 27,
+    "job_role": "Manufacturing Director",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 31785.260938910706,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #261, Manufacturing Director (Research & Development). Watch-list rank 27 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Commute distance is 23 distance units\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1649",
+    "employee_number": 1649,
+    "rank": 28,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11625.66400688043,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1649, Laboratory Technician (Research & Development). Watch-list rank 28 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Job satisfaction is low (1/4)\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-55",
+    "employee_number": 55,
+    "rank": 29,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 12197.992091985292,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #55, Laboratory Technician (Research & Development). Watch-list rank 29 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Job involvement is low (1/4)\n  3. Work environment satisfaction is low (1/4)\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1716",
+    "employee_number": 1716,
+    "rank": 30,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 68400.3191422513,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1716, Sales Executive (Sales). Watch-list rank 30 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Company tenure is 23 years\n  2. It has been 14 years since the last promotion\n  3. Job involvement is low (1/4)\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1004",
+    "employee_number": 1004,
+    "rank": 31,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11215.561631898127,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1004, Research Scientist (Research & Development). Watch-list rank 31 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Commute distance is 22 distance units\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-485",
+    "employee_number": 485,
+    "rank": 32,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 14929.114747497912,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #485, Sales Representative (Sales). Watch-list rank 32 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1780",
+    "employee_number": 1780,
+    "rank": 33,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Compensation review",
+    "owner": "HR Business Partner + Compensation",
+    "sla_days": 10,
+    "value_at_risk": 13706.1764561596,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1780, Sales Representative (Sales). Watch-list rank 33 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Total career tenure is 1 years\n  3. Stock option level is 0 compared with a workforce baseline of 1\n\nRecommended intervention: Compensation review\nReview pay positioning and total rewards against the role's internal band.\n\nTalking points:\n  - Ask how they see their pay and total reward compared with the market.\n  - Share what is possible this cycle (band review, stock, allowance) without promising a number.\n  - Agree a date to come back with a concrete answer.\n\nOwner: HR Business Partner + Compensation. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your role, growth and reward",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your role, growth and reward. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1569",
+    "employee_number": 1569,
+    "rank": 34,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 10580.528943781148,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1569, Laboratory Technician (Research & Development). Watch-list rank 34 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Work environment satisfaction is low (1/4)\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1504",
+    "employee_number": 1504,
+    "rank": 35,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 13015.212125517688,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1504, Laboratory Technician (Research & Development). Watch-list rank 35 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. The employee has worked at 7 companies\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-783",
+    "employee_number": 783,
+    "rank": 36,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Compensation review",
+    "owner": "HR Business Partner + Compensation",
+    "sla_days": 10,
+    "value_at_risk": 33624.68872001483,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #783, Sales Representative (Sales). Watch-list rank 36 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Job involvement is low (1/4)\n  2. Company tenure is 8 years\n  3. Stock option level is 0 compared with a workforce baseline of 1\n\nRecommended intervention: Compensation review\nReview pay positioning and total rewards against the role's internal band.\n\nTalking points:\n  - Ask how they see their pay and total reward compared with the market.\n  - Share what is possible this cycle (band review, stock, allowance) without promising a number.\n  - Agree a date to come back with a concrete answer.\n\nOwner: HR Business Partner + Compensation. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your role, growth and reward",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your role, growth and reward. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-816",
+    "employee_number": 816,
+    "rank": 37,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11697.761661840901,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #816, Laboratory Technician (Research & Development). Watch-list rank 37 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-137",
+    "employee_number": 137,
+    "rank": 38,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 14693.70555483204,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #137, Laboratory Technician (Research & Development). Watch-list rank 38 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1239",
+    "employee_number": 1239,
+    "rank": 39,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 34306.36406568865,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1239, Sales Executive (Sales). Watch-list rank 39 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has worked at 7 companies\n  2. The employee has spent 1 years in the current role\n  3. Job involvement is below average (2/4)\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1862",
+    "employee_number": 1862,
+    "rank": 40,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 48974.960236280305,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1862, Sales Executive (Sales). Watch-list rank 40 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. The employee has worked at 7 companies\n  3. The employee has spent 2 years in the current role\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-952",
+    "employee_number": 952,
+    "rank": 41,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11827.850923488444,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #952, Sales Representative (Sales). Watch-list rank 41 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-390",
+    "employee_number": 390,
+    "rank": 42,
+    "job_role": "Healthcare Representative",
+    "department": "Research & Development",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 22931.522353410313,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #390, Healthcare Representative (Research & Development). Watch-list rank 42 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1427",
+    "employee_number": 1427,
+    "rank": 43,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 6532.851346327069,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1427, Sales Representative (Sales). Watch-list rank 43 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Job involvement is low (1/4)\n  3. Total career tenure is 1 years\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1539",
+    "employee_number": 1539,
+    "rank": 44,
+    "job_role": "Research Director",
+    "department": "Research & Development",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 68751.49107703046,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1539, Research Director (Research & Development). Watch-list rank 44 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Company tenure is 32 years\n  2. Regular overtime increases workload and burnout exposure\n  3. It has been 13 years since the last promotion\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-648",
+    "employee_number": 648,
+    "rank": 45,
+    "job_role": "Sales Representative",
+    "department": "Sales",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 9673.425741506162,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #648, Sales Representative (Sales). Watch-list rank 45 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Total career tenure is 1 years\n  3. Business travel pattern is travel frequently\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1968",
+    "employee_number": 1968,
+    "rank": 46,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Workload reset",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 49431.74846372173,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1968, Sales Executive (Sales). Watch-list rank 46 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Work environment satisfaction is low (1/4)\n  3. Job satisfaction is low (1/4)\n\nRecommended intervention: Workload reset\nReview recurring overtime, rebalance near-term workload, and agree on sustainable working norms.\n\nTalking points:\n  - Review the last 8 weeks of overtime together.\n  - Remove or re-assign one recurring task this week.\n  - Agree a norm for after-hours work and check it in 30 days.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your workload and schedule",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your workload and schedule. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1279",
+    "employee_number": 1279,
+    "rank": 47,
+    "job_role": "Laboratory Technician",
+    "department": "Research & Development",
+    "action": "Manager stay interview",
+    "owner": "Skip-level manager",
+    "sla_days": 10,
+    "value_at_risk": 12392.89605529828,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1279, Laboratory Technician (Research & Development). Watch-list rank 47 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Work environment satisfaction is low (1/4)\n  2. Business travel pattern is travel frequently\n  3. Total career tenure is 2 years\n\nRecommended intervention: Manager stay interview\nRun a confidential stay interview and agree on two changes the manager can track.\n\nTalking points:\n  - Ask: what would make you leave, and what would make you stay?\n  - Listen first; do not defend.\n  - Commit to two changes and track them openly.\n\nOwner: Skip-level manager. Hold the conversation within 10 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about what keeps you here and what we could do better",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about what keeps you here and what we could do better. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-1868",
+    "employee_number": 1868,
+    "rank": 48,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Role fit check-in",
+    "owner": "Line manager",
+    "sla_days": 7,
+    "value_at_risk": 11503.536517937535,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #1868, Research Scientist (Research & Development). Watch-list rank 48 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. The employee has spent 0 years in the current role\n  2. Regular overtime increases workload and burnout exposure\n  3. Total career tenure is 1 years\n\nRecommended intervention: Role fit check-in\nConfirm role expectations, onboarding support, and whether the current assignment matches the employee's strengths.\n\nTalking points:\n  - Check that role expectations and success measures are clear.\n  - Ask what support they did not get when they started.\n  - Consider a buddy or an internal move if the fit is wrong.\n\nOwner: Line manager. Hold the conversation within 7 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about how your current role is going",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about how your current role is going. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-175",
+    "employee_number": 175,
+    "rank": 49,
+    "job_role": "Sales Executive",
+    "department": "Sales",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 21374.759197063617,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #175, Sales Executive (Sales). Watch-list rank 49 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. Job involvement is low (1/4)\n  3. The employee has spent 2 years in the current role\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  },
+  {
+    "id": "TG-913",
+    "employee_number": 913,
+    "rank": 50,
+    "job_role": "Research Scientist",
+    "department": "Research & Development",
+    "action": "Career progression plan",
+    "owner": "Line manager",
+    "sla_days": 14,
+    "value_at_risk": 11987.67167526484,
+    "manager_brief": "CONFIDENTIAL: HR use only. PENDING_APPROVAL.\n\nEmployee #913, Research Scientist (Research & Development). Watch-list rank 50 of 50.\n\nWhy this person is on the list (model signals, not facts about intent):\n  1. Regular overtime increases workload and burnout exposure\n  2. It has been 7 years since the last promotion\n  3. Company tenure is 8 years\n\nRecommended intervention: Career progression plan\nAgree on a documented growth path, milestones, and a relevant development opportunity.\n\nTalking points:\n  - Ask where they want to be in a year and what is blocking them.\n  - Offer one specific stretch project, course or mentor.\n  - Write down two milestones and review them in 60 days.\n\nOwner: Line manager. Hold the conversation within 14 days of approval.\nDo not mention the risk score, the watch list or this tool to the employee.",
+    "invite_subject": "Time to talk about your career plans for the next 12 months",
+    "invite_body": "Hi,\n\nI would like to set aside 30 minutes in the next couple of weeks to talk about your career plans for the next 12 months. There is nothing to prepare. I want to hear how things are going for you and what would help.\n\nPlease pick a slot that works for you, or suggest another time.\n\nThanks,\n[Manager name]",
+    "status": "PENDING_APPROVAL",
+    "created_at": "2026-10-10T06:10:34Z",
+    "history": [
+      {
+        "at": "2026-10-10T06:10:34Z",
+        "event": "DRAFTED",
+        "by": "TalentGuard agent (rule-based)"
+      }
+    ]
+  }
+]

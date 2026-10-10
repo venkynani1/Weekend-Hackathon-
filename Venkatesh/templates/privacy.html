@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Privacy policy{% endblock %}
+{% block description %}What data TalentGuard processes, which cookies it sets, how analytics work and how long anything is kept.{% endblock %}
+{% block header_action %}{% endblock %}
+{% block content %}
+<article class="legal">
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy policy</h1>
+  <p class="legal-updated">Last updated 10 October 2026</p>
+
+  <h2>Who we are</h2>
+  <p>TalentGuard is a hackathon prototype built by a student team for TechNova Solutions, a fictional client. Questions about this policy can be raised on the project's <a href="https://github.com/venkynani1/Weekend-Hackathon-/issues" rel="noopener">GitHub issues page</a>.</p>
+
+  <h2>Employee data</h2>
+  <p>TalentGuard runs on the public IBM HR Analytics Employee Attrition dataset. It is synthetic: the 1,470 records were created by IBM data scientists and describe no real person. No real employee data is collected, uploaded or stored by this site.</p>
+  <p>If TalentGuard were deployed with real HR data, the employer would act as data controller, employees would be informed that retention analytics are used, access would be limited to named HR staff, and age, gender and marital status would stay excluded from scoring, as they are today.</p>
+
+  <h2>What you enter</h2>
+  <ul>
+    <li><strong>Live scoring.</strong> Profile values you enter are sent to our server, scored in memory and returned. They are not written to disk or logs.</li>
+    <li><strong>Approval queue.</strong> When you approve or reject a draft, the reviewer name and optional note you type are stored in the audit trail on the server, because an audit trail is the purpose of that page. Do not enter personal data you do not want shown to other visitors of this demo.</li>
+  </ul>
+
+  <h2 id="cookies">Cookies</h2>
+  <table class="plain-table">
+    <thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Purpose</th><th scope="col">Lifetime</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">session</th><td>Essential</td><td>Holds a random token that stops other sites from submitting forms in your name (CSRF protection).</td><td>Until the browser closes</td></tr>
+    </tbody>
+  </table>
+  <p>Your cookie choice is remembered in your browser's local storage under the key <code>tg-consent</code>. It is not sent to us.</p>
+
+  <h2>Analytics</h2>
+  <p>We count page views per page per day on our own server. The counter stores no IP address, cookie or identifier. If you choose "Allow analytics" and the site operator has enabled it, we also load <a href="https://www.goatcounter.com/help/privacy" rel="noopener">GoatCounter</a>, an open-source analytics service that does not use cookies or track people across sites. Choosing "Essential only" keeps GoatCounter switched off. You can change your choice at any time with the "Cookie settings" link in the footer.</p>
+
+  <h2>Hosting and logs</h2>
+  <p>The site runs on a free hosting platform. The platform may keep standard request logs (IP address, time, page) for security for a short period under its own policy. We do not combine those logs with anything else.</p>
+
+  <h2>Retention</h2>
+  <p>Approval-queue entries and page counts are reset whenever the model is retrained or the free host restarts the app. Nothing is kept longer than the hackathon demo period.</p>
+
+  <h2>Your rights</h2>
+  <p>You can ask us what we hold about you and ask us to delete it by opening an issue on the repository. Since the site stores almost nothing, the answer will usually be "nothing", but we will check.</p>
+</article>
+{% endblock %}

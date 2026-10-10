@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% set page_title = (self.title() | trim) or "TalentGuard | Employee retention watch list" %}
+  {% set page_description = (self.description() | trim) or "TalentGuard ranks the 50 employees most likely to resign, explains why, and drafts the retention action for HR approval." %}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <meta name="theme-color" content="#173f35">
+  <link rel="canonical" href="{{ site_url }}{{ request.path }}">
+  {% block robots %}{% endblock %}
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TalentGuard">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ site_url }}{{ request.path }}">
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='img/og-image.png') }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TalentGuard: 44 of the 50 employees flagged really left. Retention watch list for HR.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='img/og-image.png') }}">
+
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon-32.png') }}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+  <link rel="manifest" href="{{ url_for('manifest') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body data-analytics="{{ goatcounter }}">
+  {% if false %}{% block title %}{% endblock %}{% block description %}{% endblock %}{% endif %}
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="TalentGuard home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>TalentGuard</span>
+    </a>
+    <nav aria-label="Main">
+      {% set nav = [('index', 'Watch list'), ('insights', 'Insights'), ('simulator', 'Live scoring'), ('queue', 'Approval queue')] %}
+      {% for endpoint, label in nav %}
+      <a href="{{ url_for(endpoint) }}" {% if request.endpoint == endpoint %}aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+    {% block header_action %}<a class="button button-light" href="{{ url_for('download_watchlist') }}">Export watch list</a>{% endblock %}
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div>
+      <span>TalentGuard</span>
+      <p>Retention-risk prototype for TechNova Solutions. Built on the public IBM HR Analytics dataset.</p>
+    </div>
+    <nav aria-label="Legal and resources">
+      <a href="{{ url_for('privacy') }}">Privacy policy</a>
+      <a href="{{ url_for('terms') }}">Terms of use</a>
+      <a href="{{ url_for('sitemap') }}">Sitemap</a>
+      <button type="button" class="footer-link" id="cookie-settings">Cookie settings</button>
+    </nav>
+    <p class="copyright">&copy; {{ current_year }} TalentGuard team</p>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p>We use one essential cookie to protect forms from forgery. With your permission we also count page visits with GoatCounter, which stores no personal data. <a href="{{ url_for('privacy') }}#cookies">Read the privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="button button-light" data-consent="essential">Essential only</button>
+      <button type="button" class="button button-dark" data-consent="all">Allow analytics</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='site.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

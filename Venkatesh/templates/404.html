@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Page not found{% endblock %}
+{% block description %}This page does not exist. Go back to the TalentGuard retention watch list.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+{% block header_action %}{% endblock %}
+{% block content %}
+<section class="error-page">
+  <p class="eyebrow">Error 404</p>
+  <h1>This page left before we could talk to it.</h1>
+  <p>The address may be mistyped or the page may have moved. Everything that matters is one click away.</p>
+  <a class="button button-primary" href="{{ url_for('index') }}">Back to the watch list</a>
+  <p class="error-links">Or try <a href="{{ url_for('insights') }}">Insights</a>, <a href="{{ url_for('simulator') }}">Live scoring</a> or the <a href="{{ url_for('queue') }}">Approval queue</a>.</p>
+</section>
+{% endblock %}

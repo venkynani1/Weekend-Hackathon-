@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Retention action approval queue{% endblock %}
+{% block description %}Drafted retention briefs and meeting invites for every watch-list employee, held as PENDING_APPROVAL until a named HR reviewer approves or rejects them.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+{% block header_action %}<a class="button button-light" href="{{ url_for('download_queue') }}">Export queue</a>{% endblock %}
+{% block content %}
+<section class="page-intro">
+  <p class="eyebrow">Agent drafts</p>
+  <h1>Nothing goes out until a person approves it.</h1>
+  <p class="hero-summary">For each watch-list employee the agent drafts a confidential manager brief and a neutral meeting invite. Every draft starts as PENDING_APPROVAL. Decisions are logged with the reviewer's name and time.</p>
+  <ul class="status-filter" aria-label="Filter by status">
+    <li><a href="{{ url_for('queue') }}" {% if not status %}aria-current="true"{% endif %}>All <span>{{ counts.values()|sum }}</span></a></li>
+    <li><a href="{{ url_for('queue', status='PENDING_APPROVAL') }}" {% if status == 'PENDING_APPROVAL' %}aria-current="true"{% endif %}>Pending <span>{{ counts.PENDING_APPROVAL }}</span></a></li>
+    <li><a href="{{ url_for('queue', status='APPROVED') }}" {% if status == 'APPROVED' %}aria-current="true"{% endif %}>Approved <span>{{ counts.APPROVED }}</span></a></li>
+    <li><a href="{{ url_for('queue', status='REJECTED') }}" {% if status == 'REJECTED' %}aria-current="true"{% endif %}>Rejected <span>{{ counts.REJECTED }}</span></a></li>
+  </ul>
+  {% if message %}<p class="notice" role="status">{{ message }}</p>{% endif %}
+</section>
+
+<section class="section-block queue-section">
+  {% for item in items %}
+  <details class="queue-item" id="{{ item.id }}" {% if loop.first and not message %}open{% endif %}>
+    <summary>
+      <span class="table-rank">{{ "%02d"|format(item.rank) }}</span>
+      <span class="queue-who"><strong>Employee #{{ item.employee_number }}</strong><small>{{ item.job_role }} &middot; {{ item.department }}</small></span>
+      <span class="queue-action">{{ item.action }}<small>Owner: {{ item.owner }}</small></span>
+      <span class="status status-{{ item.status|lower }}">{{ item.status }}</span>
+    </summary>
+    <div class="queue-body">
+      <div class="draft">
+        <p class="dialog-label">Manager brief (internal)</p>
+        <pre>{{ item.manager_brief }}</pre>
+      </div>
+      <div class="draft">
+        <p class="dialog-label">Invite to employee</p>
+        <p class="draft-subject"><strong>Subject:</strong> {{ item.invite_subject }}</p>
+        <pre>{{ item.invite_body }}</pre>
+      </div>
+      <form class="decision-form" method="post" action="{{ url_for('queue_decision', draft_id=item.id) }}">
+        <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+        <div class="hp-field" aria-hidden="true"><label>Leave empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="field"><span class="field-label">Reviewer name</span>
+          <input type="text" name="reviewer" required minlength="2" maxlength="60" autocomplete="name" pattern=".*\S.*\S.*">
+        </label>
+        <label class="field"><span class="field-label">Note <small>(optional)</small></span>
+          <input type="text" name="note" maxlength="300">
+        </label>
+        <div class="decision-buttons">
+          <button class="button button-dark" type="submit" name="decision" value="APPROVED">Approve</button>
+          <button class="button button-light" type="submit" name="decision" value="REJECTED">Reject</button>
+          {% if item.status != 'PENDING_APPROVAL' %}<button class="button button-light" type="submit" name="decision" value="PENDING_APPROVAL">Reset</button>{% endif %}
+        </div>
+      </form>
+      <div class="audit">
+        <p class="dialog-label">Audit trail</p>
+        <ol>{% for h in item.history %}<li><time datetime="{{ h.at }}">{{ h.at|replace('T', ' ')|replace('Z', ' UTC') }}</time> {{ h.event }} by {{ h.by }}{% if h.note %}: "{{ h.note }}"{% endif %}</li>{% endfor %}</ol>
+      </div>
+    </div>
+  </details>
+  {% else %}
+  <p class="empty-state">No drafts with this status.</p>
+  {% endfor %}
+  <p class="small-print usage">Usage today: {{ stats.today }} page views ({{ stats.all_time }} since launch). Counted without cookies or personal data.</p>
+</section>
+{% endblock %}

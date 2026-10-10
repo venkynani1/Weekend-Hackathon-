@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | {{ title }}{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+{% block header_action %}{% endblock %}
+{% block content %}
+<section class="error-page">
+  <p class="eyebrow">Something went wrong</p>
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <a class="button button-primary" href="{{ url_for('index') }}">Back to the watch list</a>
+</section>
+{% endblock %}

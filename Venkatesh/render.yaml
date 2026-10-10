@@ -1,0 +1,20 @@
+# Free public deployment of the Flask app on Render (render.com -> New -> Blueprint -> this repo).
+services:
+  - type: web
+    name: talentguard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python train.py
+    startCommand: gunicorn app:app --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: TALENTGUARD_SECRET_KEY
+        generateValue: true
+      - key: TALENTGUARD_SECURE_COOKIES
+        value: "1"
+      - key: TALENTGUARD_SITE_URL
+        sync: false
+      - key: TALENTGUARD_GOATCOUNTER
+        sync: false

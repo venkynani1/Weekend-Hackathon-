@@ -1,0 +1,762 @@
+{
+  "dataset": {
+    "records": 1470,
+    "columns": 35,
+    "attrition_count": 237,
+    "attrition_rate": 0.16122448979591836,
+    "missing_cells": 0
+  },
+  "selected_model": "Logistic regression",
+  "selection_metric": "Five-fold out-of-fold average precision",
+  "selected_model_score": {
+    "name": "Logistic regression",
+    "average_precision": 0.5871567546561374,
+    "roc_auc": 0.820950581922586,
+    "f1_at_capacity": 0.30662020905923343,
+    "recall_at_capacity": 0.18565400843881857,
+    "precision_at_50": 0.88,
+    "recall_at_50": 0.18565400843881857,
+    "lift_at_50": 5.4582278481012665,
+    "capacity_threshold": 0.9125406372672926
+  },
+  "candidate_scores": [
+    {
+      "name": "Logistic regression",
+      "average_precision": 0.5871567546561374,
+      "roc_auc": 0.820950581922586,
+      "f1_at_capacity": 0.30662020905923343,
+      "recall_at_capacity": 0.18565400843881857,
+      "precision_at_50": 0.88,
+      "recall_at_50": 0.18565400843881857,
+      "lift_at_50": 5.4582278481012665,
+      "capacity_threshold": 0.9125406372672926
+    },
+    {
+      "name": "Random forest",
+      "average_precision": 0.5478908604946279,
+      "roc_auc": 0.8023379565465864,
+      "f1_at_capacity": 0.2787456445993031,
+      "recall_at_capacity": 0.16877637130801687,
+      "precision_at_50": 0.8,
+      "recall_at_50": 0.16877637130801687,
+      "lift_at_50": 4.962025316455697,
+      "capacity_threshold": 0.6493994302825687
+    },
+    {
+      "name": "Gradient boosted trees",
+      "average_precision": 0.52230899615444,
+      "roc_auc": 0.7865177382871184,
+      "f1_at_capacity": 0.29965156794425085,
+      "recall_at_capacity": 0.18143459915611815,
+      "precision_at_50": 0.86,
+      "recall_at_50": 0.18143459915611815,
+      "lift_at_50": 5.334177215189873,
+      "capacity_threshold": 0.8693629749293302
+    }
+  ],
+  "holdout": {
+    "test_records": 294,
+    "capacity": 10,
+    "average_precision": 0.5477553915779931,
+    "roc_auc": 0.791541045740374,
+    "precision_at_capacity": 1.0,
+    "recall_at_capacity": 0.2127659574468085,
+    "lift_at_capacity": 6.25531914893617,
+    "confusion_matrix": [
+      [
+        247,
+        0
+      ],
+      [
+        37,
+        10
+      ]
+    ]
+  },
+  "department_summary": [
+    {
+      "department": "Sales",
+      "employees": 446,
+      "historical_attrition_rate": 0.2062780269058296,
+      "average_risk": 0.43262350529975474,
+      "watchlist_count": 26
+    },
+    {
+      "department": "Research & Development",
+      "employees": 961,
+      "historical_attrition_rate": 0.1383975026014568,
+      "average_risk": 0.3312026443996445,
+      "watchlist_count": 22
+    },
+    {
+      "department": "Human Resources",
+      "employees": 63,
+      "historical_attrition_rate": 0.19047619047619047,
+      "average_risk": 0.38618377034082263,
+      "watchlist_count": 2
+    }
+  ],
+  "driver_summary": [
+    {
+      "feature": "OverTime",
+      "label": "Overtime",
+      "count": 34
+    },
+    {
+      "feature": "YearsInCurrentRole",
+      "label": "Time in current role",
+      "count": 31
+    },
+    {
+      "feature": "TotalWorkingYears",
+      "label": "Career tenure",
+      "count": 19
+    },
+    {
+      "feature": "EnvironmentSatisfaction",
+      "label": "Environment satisfaction",
+      "count": 17
+    },
+    {
+      "feature": "JobInvolvement",
+      "label": "Job involvement",
+      "count": 10
+    },
+    {
+      "feature": "BusinessTravel",
+      "label": "Business travel",
+      "count": 10
+    },
+    {
+      "feature": "NumCompaniesWorked",
+      "label": "Prior companies",
+      "count": 8
+    },
+    {
+      "feature": "YearsAtCompany",
+      "label": "Company tenure",
+      "count": 5
+    }
+  ],
+  "insights": {
+    "eda": {
+      "findings": [
+        {
+          "title": "Overtime triples the exit rate",
+          "evidence": "31% of employees on overtime left vs 10% without it (2.9x).",
+          "so_what": "Workload is the single most controllable lever HR has.",
+          "chart": [
+            {
+              "label": "Overtime",
+              "value": 0.30528846153846156
+            },
+            {
+              "label": "No overtime",
+              "value": 0.10436432637571158
+            }
+          ]
+        },
+        {
+          "title": "Sales Representatives leave at 40%",
+          "evidence": "Sales Representative attrition is 40%, against 2% for Research Directors.",
+          "so_what": "A role-level problem (pay mix, quota pressure) needs a policy fix, not 1:1 talks alone.",
+          "chart": [
+            {
+              "label": "Sales Representative",
+              "value": 0.39759036144578314
+            },
+            {
+              "label": "Laboratory Technician",
+              "value": 0.23938223938223938
+            },
+            {
+              "label": "Human Resources",
+              "value": 0.23076923076923078
+            },
+            {
+              "label": "Sales Executive",
+              "value": 0.17484662576687116
+            },
+            {
+              "label": "Research Scientist",
+              "value": 0.16095890410958905
+            }
+          ]
+        },
+        {
+          "title": "The first year is the danger zone",
+          "evidence": "35% of employees with 0-1 years at the company left vs 8% after 10+ years.",
+          "so_what": "Onboarding and the first 12 months deserve a structured check-in programme.",
+          "chart": [
+            {
+              "label": "0-1 yrs",
+              "value": 0.3488372093023256
+            },
+            {
+              "label": "2-3 yrs",
+              "value": 0.1843137254901961
+            },
+            {
+              "label": "4-5 yrs",
+              "value": 0.13071895424836602
+            },
+            {
+              "label": "6-10 yrs",
+              "value": 0.12276785714285714
+            },
+            {
+              "label": "11+ yrs",
+              "value": 0.08130081300813008
+            }
+          ]
+        },
+        {
+          "title": "Leavers earned 38% less",
+          "evidence": "Median monthly income of leavers is 3,202 vs 5,204 for stayers.",
+          "so_what": "Pay benchmarking for low-band roles is cheaper than replacing 7.5 months of salary.",
+          "chart": [
+            {
+              "label": "Leavers",
+              "value": 3202.0
+            },
+            {
+              "label": "Stayers",
+              "value": 5204.0
+            }
+          ],
+          "money": true
+        },
+        {
+          "title": "No stock options, double the risk",
+          "evidence": "Stock option level 0 has 24% attrition vs 9% at level 1.",
+          "so_what": "A small equity grant is a cheap retention tool for high-value staff.",
+          "chart": [
+            {
+              "label": "Level 0",
+              "value": 0.24405705229793978
+            },
+            {
+              "label": "Level 1",
+              "value": 0.09395973154362416
+            },
+            {
+              "label": "Level 2",
+              "value": 0.0759493670886076
+            },
+            {
+              "label": "Level 3",
+              "value": 0.17647058823529413
+            }
+          ]
+        },
+        {
+          "title": "Frequent travellers and unhappy staff leave more",
+          "evidence": "Frequent travel: 25% vs non-travel 8%. Job satisfaction 1/4: 23% vs 4/4: 11%.",
+          "so_what": "Travel rotation and stay interviews address both.",
+          "chart": [
+            {
+              "label": "Travel often",
+              "value": 0.2490974729241877
+            },
+            {
+              "label": "No travel",
+              "value": 0.08
+            }
+          ]
+        }
+      ],
+      "traps": [
+        {
+          "trap": "Accuracy is a trap",
+          "detail": "Only 16.1% left. A model that says 'nobody leaves' scores 83.9% accuracy and finds zero leavers.",
+          "handling": "We rank by average precision (PR-AUC) and judge precision at HR's 50-person capacity."
+        },
+        {
+          "trap": "EmployeeNumber is an ID",
+          "detail": "A unique row identifier carries no behaviour but a tree model can memorise it.",
+          "handling": "Dropped before training; kept only to label the watch list."
+        },
+        {
+          "trap": "Constant columns",
+          "detail": "EmployeeCount, Over18, StandardHours have one value for all 1,470 rows.",
+          "handling": "Detected programmatically and dropped. They add noise and zero signal."
+        },
+        {
+          "trap": "Protected attributes",
+          "detail": "Age, Gender and MaritalStatus are predictive but cannot legally justify a retention decision.",
+          "handling": "Excluded from the model, then used only to audit the watch list for bias."
+        },
+        {
+          "trap": "In-sample scores would flatter us",
+          "detail": "Scoring employees with a model trained on them inflates precision.",
+          "handling": "Every ranked score is out-of-fold (5-fold stratified). Preprocessing is inside the pipeline, so scalers fit on train folds only."
+        }
+      ],
+      "constant_columns": [
+        "EmployeeCount",
+        "Over18",
+        "StandardHours"
+      ],
+      "all_no_accuracy": 0.8387755102040817
+    },
+    "baselines": [
+      {
+        "name": "Predict 'nobody leaves'",
+        "kind": "Naive",
+        "accuracy": 0.8387755102040817,
+        "average_precision": 0.16122448979591836,
+        "roc_auc": 0.5,
+        "precision_at_50": 0.0,
+        "recall_at_50": 0.0,
+        "lift_at_50": 0.0,
+        "note": "High accuracy, finds nobody.",
+        "caught_of_50": 0
+      },
+      {
+        "name": "Random 50 employees",
+        "kind": "Naive",
+        "accuracy": null,
+        "average_precision": 0.16122443396353553,
+        "roc_auc": 0.4886815115956759,
+        "precision_at_50": 0.16,
+        "recall_at_50": 0.03375527426160337,
+        "lift_at_50": 0.9924050632911393,
+        "note": "What HR gets with no targeting.",
+        "caught_of_50": 8
+      },
+      {
+        "name": "HR rule of thumb",
+        "kind": "Rule",
+        "accuracy": null,
+        "average_precision": 0.49338699058001256,
+        "roc_auc": 0.7831230472827071,
+        "precision_at_50": 0.78,
+        "recall_at_50": 0.16455696202531644,
+        "lift_at_50": 4.837974683544304,
+        "note": "Overtime, satisfaction, tenure, pay, travel points.",
+        "caught_of_50": 39
+      },
+      {
+        "name": "Logistic regression",
+        "kind": "ML (selected)",
+        "accuracy": null,
+        "average_precision": 0.5871567546561374,
+        "roc_auc": 0.820950581922586,
+        "precision_at_50": 0.88,
+        "recall_at_50": 0.18565400843881857,
+        "lift_at_50": 5.4582278481012665,
+        "note": "Out-of-fold scores.",
+        "caught_of_50": 44
+      }
+    ],
+    "capacity_curve": [
+      {
+        "k": 10,
+        "precision": 1.0,
+        "recall": 0.04219409282700422,
+        "lift": 6.2025316455696204,
+        "caught": 10
+      },
+      {
+        "k": 25,
+        "precision": 0.96,
+        "recall": 0.10126582278481013,
+        "lift": 5.954430379746835,
+        "caught": 24
+      },
+      {
+        "k": 50,
+        "precision": 0.88,
+        "recall": 0.18565400843881857,
+        "lift": 5.4582278481012665,
+        "caught": 44
+      },
+      {
+        "k": 75,
+        "precision": 0.8266666666666667,
+        "recall": 0.2616033755274262,
+        "lift": 5.127426160337553,
+        "caught": 62
+      },
+      {
+        "k": 100,
+        "precision": 0.77,
+        "recall": 0.32489451476793246,
+        "lift": 4.775949367088608,
+        "caught": 77
+      },
+      {
+        "k": 150,
+        "precision": 0.6333333333333333,
+        "recall": 0.4008438818565401,
+        "lift": 3.928270042194093,
+        "caught": 95
+      },
+      {
+        "k": 200,
+        "precision": 0.575,
+        "recall": 0.48523206751054854,
+        "lift": 3.5664556962025316,
+        "caught": 115
+      },
+      {
+        "k": 300,
+        "precision": 0.48333333333333334,
+        "recall": 0.6118143459915611,
+        "lift": 2.99789029535865,
+        "caught": 145
+      }
+    ],
+    "gains": [
+      {
+        "decile": 1,
+        "employees": 147,
+        "leavers": 94,
+        "leave_rate": 0.6394557823129252,
+        "cumulative_capture": 0.39662447257383965
+      },
+      {
+        "decile": 2,
+        "employees": 147,
+        "leavers": 49,
+        "leave_rate": 0.3333333333333333,
+        "cumulative_capture": 0.6033755274261603
+      },
+      {
+        "decile": 3,
+        "employees": 147,
+        "leavers": 23,
+        "leave_rate": 0.1564625850340136,
+        "cumulative_capture": 0.70042194092827
+      },
+      {
+        "decile": 4,
+        "employees": 147,
+        "leavers": 21,
+        "leave_rate": 0.14285714285714285,
+        "cumulative_capture": 0.7890295358649789
+      },
+      {
+        "decile": 5,
+        "employees": 147,
+        "leavers": 19,
+        "leave_rate": 0.1292517006802721,
+        "cumulative_capture": 0.869198312236287
+      },
+      {
+        "decile": 6,
+        "employees": 147,
+        "leavers": 10,
+        "leave_rate": 0.06802721088435375,
+        "cumulative_capture": 0.9113924050632911
+      },
+      {
+        "decile": 7,
+        "employees": 147,
+        "leavers": 4,
+        "leave_rate": 0.027210884353741496,
+        "cumulative_capture": 0.9282700421940928
+      },
+      {
+        "decile": 8,
+        "employees": 147,
+        "leavers": 5,
+        "leave_rate": 0.034013605442176874,
+        "cumulative_capture": 0.9493670886075949
+      },
+      {
+        "decile": 9,
+        "employees": 147,
+        "leavers": 8,
+        "leave_rate": 0.05442176870748299,
+        "cumulative_capture": 0.9831223628691983
+      },
+      {
+        "decile": 10,
+        "employees": 147,
+        "leavers": 4,
+        "leave_rate": 0.027210884353741496,
+        "cumulative_capture": 1.0
+      }
+    ],
+    "leakage": {
+      "top_single_features": [
+        {
+          "feature": "JobRole",
+          "auc": 0.6758292525177861
+        },
+        {
+          "feature": "TotalWorkingYears",
+          "auc": 0.6558529332251959
+        },
+        {
+          "feature": "MonthlyIncome",
+          "auc": 0.6556698526115509
+        },
+        {
+          "feature": "OverTime",
+          "auc": 0.6507386532795384
+        },
+        {
+          "feature": "YearsAtCompany",
+          "auc": 0.648957467122486
+        },
+        {
+          "feature": "JobLevel",
+          "auc": 0.6416085770700942
+        }
+      ],
+      "max_single_auc": 0.6758292525177861,
+      "model_auc": 0.820950581922586,
+      "verdict": "No leakage signal: no single column predicts attrition above 0.90 AUC and the model sits at a realistic 0.82. An AUC above 0.95 on this data would be a red flag."
+    },
+    "fairness": [
+      {
+        "attribute": "Gender",
+        "groups": [
+          {
+            "group": "Female",
+            "workforce_share": 0.4,
+            "watchlist_share": 0.38,
+            "selection_rate": 0.03231292517006803,
+            "historical_attrition": 0.14795918367346939,
+            "leaver_share": 0.3670886075949367,
+            "precision_on_list": 0.8947368421052632,
+            "ratio_to_overall": 0.95
+          },
+          {
+            "group": "Male",
+            "workforce_share": 0.6,
+            "watchlist_share": 0.62,
+            "selection_rate": 0.035147392290249435,
+            "historical_attrition": 0.17006802721088435,
+            "leaver_share": 0.6329113924050633,
+            "precision_on_list": 0.8709677419354839,
+            "ratio_to_overall": 1.0333333333333332
+          }
+        ]
+      },
+      {
+        "attribute": "Age band",
+        "groups": [
+          {
+            "group": "Under 30",
+            "workforce_share": 0.2217687074829932,
+            "watchlist_share": 0.52,
+            "selection_rate": 0.07975460122699386,
+            "historical_attrition": 0.2791411042944785,
+            "leaver_share": 0.38396624472573837,
+            "precision_on_list": 0.9615384615384616,
+            "ratio_to_overall": 2.3447852760736194
+          },
+          {
+            "group": "30-39",
+            "workforce_share": 0.4231292517006803,
+            "watchlist_share": 0.3,
+            "selection_rate": 0.024115755627009645,
+            "historical_attrition": 0.14308681672025725,
+            "leaver_share": 0.3755274261603376,
+            "precision_on_list": 0.9333333333333333,
+            "ratio_to_overall": 0.7090032154340835
+          },
+          {
+            "group": "40-49",
+            "workforce_share": 0.23741496598639455,
+            "watchlist_share": 0.12,
+            "selection_rate": 0.017191977077363897,
+            "historical_attrition": 0.09742120343839542,
+            "leaver_share": 0.14345991561181434,
+            "precision_on_list": 0.5,
+            "ratio_to_overall": 0.5054441260744985
+          },
+          {
+            "group": "50+",
+            "workforce_share": 0.11768707482993197,
+            "watchlist_share": 0.06,
+            "selection_rate": 0.017341040462427744,
+            "historical_attrition": 0.1329479768786127,
+            "leaver_share": 0.0970464135021097,
+            "precision_on_list": 0.6666666666666666,
+            "ratio_to_overall": 0.5098265895953756
+          }
+        ]
+      },
+      {
+        "attribute": "Marital status",
+        "groups": [
+          {
+            "group": "Divorced",
+            "workforce_share": 0.22244897959183674,
+            "watchlist_share": 0.06,
+            "selection_rate": 0.009174311926605505,
+            "historical_attrition": 0.10091743119266056,
+            "leaver_share": 0.13924050632911392,
+            "precision_on_list": 0.6666666666666666,
+            "ratio_to_overall": 0.26972477064220185
+          },
+          {
+            "group": "Married",
+            "workforce_share": 0.45782312925170066,
+            "watchlist_share": 0.3,
+            "selection_rate": 0.022288261515601784,
+            "historical_attrition": 0.12481426448736999,
+            "leaver_share": 0.35443037974683544,
+            "precision_on_list": 0.8,
+            "ratio_to_overall": 0.6552748885586924
+          },
+          {
+            "group": "Single",
+            "workforce_share": 0.3197278911564626,
+            "watchlist_share": 0.64,
+            "selection_rate": 0.06808510638297872,
+            "historical_attrition": 0.2553191489361702,
+            "leaver_share": 0.5063291139240507,
+            "precision_on_list": 0.9375,
+            "ratio_to_overall": 2.0017021276595743
+          }
+        ]
+      }
+    ],
+    "business": {
+      "assumptions": {
+        "replacement_cost_months": 7.5,
+        "save_rate": 0.3,
+        "cost_per_talk_months": 0.25,
+        "cycles_per_year": 4,
+        "median_monthly_income": 4919.0,
+        "company_headcount": 12000,
+        "company_attrition": 0.16
+      },
+      "cycle": {
+        "talks": 50,
+        "leavers_reached": 44,
+        "leavers_reached_random": 8.061224489795919,
+        "replacement_cost_reached": 1155495.0,
+        "avg_replacement_cost": 26261.25,
+        "expected_saves": 13.2,
+        "gross_savings": 346648.5,
+        "programme_cost": 61487.5,
+        "net_savings": 285161.0,
+        "roi": 4.637706850985973,
+        "random_gross_savings": 86827.11734693877
+      },
+      "company": {
+        "annual_exits": 1920.0,
+        "annual_cost": 70833600.0
+      }
+    },
+    "cost_weighted": {
+      "by_risk": {
+        "leavers_reached": 44,
+        "replacement_cost_reached": 1155495.0,
+        "avg_salary_on_list": 3889.78
+      },
+      "by_value": {
+        "leavers_reached": 22,
+        "replacement_cost_reached": 1524735.0,
+        "avg_salary_on_list": 11562.28
+      },
+      "uplift_pct": 0.31955136110498095
+    },
+    "role_hotspots": [
+      {
+        "role": "Sales Representative",
+        "department": "Sales",
+        "headcount": 83,
+        "attrition": 0.39759036144578314,
+        "overtime_share": 0.2891566265060241,
+        "on_list": 18,
+        "avg_score": 0.6615798129281183
+      },
+      {
+        "role": "Laboratory Technician",
+        "department": "Research & Development",
+        "headcount": 259,
+        "attrition": 0.23938223938223938,
+        "overtime_share": 0.23938223938223938,
+        "on_list": 12,
+        "avg_score": 0.4871741933367118
+      },
+      {
+        "role": "Sales Executive",
+        "department": "Sales",
+        "headcount": 326,
+        "attrition": 0.17484662576687116,
+        "overtime_share": 0.2883435582822086,
+        "on_list": 8,
+        "avg_score": 0.39788089998286014
+      },
+      {
+        "role": "Research Scientist",
+        "department": "Research & Development",
+        "headcount": 292,
+        "attrition": 0.16095890410958905,
+        "overtime_share": 0.3321917808219178,
+        "on_list": 7,
+        "avg_score": 0.3659281900581579
+      },
+      {
+        "role": "Human Resources",
+        "department": "Human Resources",
+        "headcount": 52,
+        "attrition": 0.23076923076923078,
+        "overtime_share": 0.25,
+        "on_list": 2,
+        "avg_score": 0.43190086694100294
+      },
+      {
+        "role": "Manufacturing Director",
+        "department": "Research & Development",
+        "headcount": 145,
+        "attrition": 0.06896551724137931,
+        "overtime_share": 0.2689655172413793,
+        "on_list": 1,
+        "avg_score": 0.2458983862949465
+      },
+      {
+        "role": "Healthcare Representative",
+        "department": "Research & Development",
+        "headcount": 131,
+        "attrition": 0.06870229007633588,
+        "overtime_share": 0.2824427480916031,
+        "on_list": 1,
+        "avg_score": 0.23103664105323282
+      },
+      {
+        "role": "Research Director",
+        "department": "Research & Development",
+        "headcount": 80,
+        "attrition": 0.025,
+        "overtime_share": 0.2875,
+        "on_list": 1,
+        "avg_score": 0.13363763643266507
+      },
+      {
+        "role": "Manager",
+        "department": "Research & Development",
+        "headcount": 102,
+        "attrition": 0.049019607843137254,
+        "overtime_share": 0.2647058823529412,
+        "on_list": 0,
+        "avg_score": 0.18475524253233355
+      }
+    ]
+  },
+  "methodology": {
+    "cross_validation_folds": 5,
+    "capacity": 50,
+    "priority_capacity": 10,
+    "excluded_columns": [
+      "Attrition",
+      "EmployeeNumber",
+      "EmployeeCount",
+      "Over18",
+      "StandardHours",
+      "Age",
+      "Gender",
+      "MaritalStatus"
+    ],
+    "explanation_method": "Counterfactual feature replacement against workforce medians or modes",
+    "scope": "Historical demonstration using the IBM HR attrition dataset"
+  }
+}

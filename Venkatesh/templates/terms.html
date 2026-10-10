@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Terms of use{% endblock %}
+{% block description %}The rules for using the TalentGuard retention-risk prototype, what it may and may not be used for, and our limits of liability.{% endblock %}
+{% block header_action %}{% endblock %}
+{% block content %}
+<article class="legal">
+  <p class="eyebrow">Legal</p>
+  <h1>Terms of use</h1>
+  <p class="legal-updated">Last updated 10 October 2026</p>
+
+  <h2>1. What TalentGuard is</h2>
+  <p>TalentGuard is a demonstration built for a hackathon. It ranks synthetic employee records by estimated attrition risk, explains the ranking and drafts retention actions for human review.</p>
+
+  <h2>2. What it must not be used for</h2>
+  <ul>
+    <li>Hiring, firing, demotion, pay cuts, performance ratings or any other adverse employment decision.</li>
+    <li>Any automated decision about a person. Every output is a suggestion for a qualified human reviewer.</li>
+    <li>Telling an employee they are "at risk" or showing them a score. The drafted invites are deliberately neutral.</li>
+    <li>Scoring real people without their employer's lawful basis, an employee notice and a bias review.</li>
+  </ul>
+
+  <h2>3. Accuracy</h2>
+  <p>Scores are statistical estimates from historical, synthetic data. On that data, 44 of the 50 people ranked highest really left, but the model will be wrong about individuals. The leave probabilities and money figures rest on assumptions stated on the Insights page.</p>
+
+  <h2>4. Acceptable use of this site</h2>
+  <p>Do not attempt to overload, scrape or attack the site, bypass its rate limits or bot protection, or enter content that is unlawful or someone else's personal data.</p>
+
+  <h2>5. Open source</h2>
+  <p>The code is published on GitHub. The IBM HR Analytics dataset is used under the terms of its publication on Kaggle.</p>
+
+  <h2>6. No warranty, limited liability</h2>
+  <p>The site is provided as is, without warranty of any kind. To the extent the law allows, the team is not liable for any loss arising from use of the site or its outputs.</p>
+
+  <h2>7. Changes</h2>
+  <p>We may update these terms. The date at the top shows the latest version. See also our <a href="{{ url_for('privacy') }}">privacy policy</a>.</p>
+</article>
+{% endblock %}

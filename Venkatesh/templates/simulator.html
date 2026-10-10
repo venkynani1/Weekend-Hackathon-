@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}TalentGuard | Live risk scoring and what-if simulator{% endblock %}
+{% block description %}Score any employee profile live, see the top three risk reasons, and compare retention interventions by risk reduction and net value.{% endblock %}
+{% block head %}<meta name="csrf-token" content="{{ csrf_token() }}">{% endblock %}
+{% block content %}
+<section class="page-intro">
+  <p class="eyebrow">Live scoring</p>
+  <h1>Score an employee, then test what would change their mind.</h1>
+  <p class="hero-summary">Load someone from the watch list or edit any field. The trained model scores the profile on the server, explains it, and ranks interventions by expected net value.</p>
+</section>
+
+<section class="section-block simulator">
+  <form id="score-form" class="sim-form" novalidate>
+    <fieldset class="sim-picker">
+      <legend>Start from</legend>
+      <label for="employee-select">Watch-list employee</label>
+      <select id="employee-select" name="employee_select">
+        {% for e in watchlist %}
+        <option value="{{ e.EmployeeNumber|int }}" {% if e.EmployeeNumber|int == selected_id %}selected{% endif %}>Rank {{ e.Rank|int }}: #{{ e.EmployeeNumber|int }}, {{ e.JobRole }}</option>
+        {% endfor %}
+      </select>
+      <label for="employee-id">Or any employee number</label>
+      <div class="inline-field">
+        <input id="employee-id" type="number" inputmode="numeric" min="1" max="99999" placeholder="e.g. 1" aria-describedby="employee-id-error">
+        <button type="button" class="button button-light" id="load-employee">Load</button>
+      </div>
+      <p class="field-error" id="employee-id-error" aria-live="polite"></p>
+      <input type="hidden" name="employee_number" value="{{ selected_id }}">
+      <p class="sim-loaded">Editing: <strong id="loaded-label">Employee #{{ selected_id }}</strong></p>
+    </fieldset>
+
+    {% macro select_field(name, options, value) %}
+    <label class="field" for="f-{{ name }}"><span class="field-label">{{ labels[name] }}</span>
+      <select id="f-{{ name }}" name="{{ name }}" required aria-describedby="e-{{ name }}">
+        {% for o in options %}<option value="{{ o }}" {% if o == value %}selected{% endif %}>{{ o|replace('_', ' ') }}</option>{% endfor %}
+      </select>
+      <span class="field-error" id="e-{{ name }}" aria-live="polite"></span>
+    </label>
+    {% endmacro %}
+    {% macro number_field(name, value, hint='') %}
+    <label class="field" for="f-{{ name }}"><span class="field-label">{{ labels[name] }}{% if hint %} <small>({{ hint }})</small>{% endif %}</span>
+      <input id="f-{{ name }}" name="{{ name }}" type="number" inputmode="numeric" step="1" required
+             min="{{ int_fields[name][0] }}" max="{{ int_fields[name][1] }}" value="{{ value }}" aria-describedby="e-{{ name }}">
+      <span class="field-error" id="e-{{ name }}" aria-live="polite"></span>
+    </label>
+    {% endmacro %}
+
+    <fieldset>
+      <legend>Role and workload</legend>
+      <div class="field-grid">
+        {{ select_field('Department', roles_by_department.keys()|list, profile.Department) }}
+        {{ select_field('JobRole', roles_by_department[profile.Department], profile.JobRole) }}
+        {{ select_field('OverTime', choice_fields.OverTime, profile.OverTime) }}
+        {{ select_field('BusinessTravel', choice_fields.BusinessTravel, profile.BusinessTravel) }}
+        {{ number_field('DistanceFromHome', profile.DistanceFromHome) }}
+        {{ number_field('JobLevel', profile.JobLevel, '1 to 5') }}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Pay</legend>
+      <div class="field-grid">
+        {{ number_field('MonthlyIncome', profile.MonthlyIncome) }}
+        {{ number_field('StockOptionLevel', profile.StockOptionLevel, '0 to 3') }}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Survey scores (1 low, 4 high)</legend>
+      <div class="field-grid">
+        {% for f in ['JobSatisfaction', 'EnvironmentSatisfaction', 'WorkLifeBalance', 'JobInvolvement', 'RelationshipSatisfaction'] %}
+        {{ number_field(f, profile[f]) }}
+        {% endfor %}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Tenure and history</legend>
+      <div class="field-grid">
+        {% for f in ['YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager', 'TotalWorkingYears', 'NumCompaniesWorked', 'TrainingTimesLastYear'] %}
+        {{ number_field(f, profile[f]) }}
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <div class="hp-field" aria-hidden="true">
+      <label for="website">Leave this field empty</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <p class="form-error" id="form-error" role="alert"></p>
+    <div class="sim-submit">
+      <button class="button button-primary" type="submit" id="score-button">Score this employee</button>
+      <p class="small-print">Scores run on the server. Nothing you enter is stored.</p>
+    </div>
+  </form>
+
+  <aside class="sim-result" aria-live="polite" aria-busy="false" id="result">
+    <div class="result-empty" id="result-empty">
+      <p class="eyebrow">Result</p>
+      <p>Press <strong>Score this employee</strong> to see the risk, the reasons and the interventions.</p>
+    </div>
+    <div class="skeleton" id="result-skeleton" hidden aria-hidden="true">
+      <span class="sk sk-title"></span><span class="sk sk-big"></span>
+      <span class="sk"></span><span class="sk"></span><span class="sk sk-short"></span>
+      <span class="sk sk-block"></span><span class="sk sk-block"></span>
+    </div>
+    <div id="result-body" hidden></div>
+  </aside>
+</section>
+
+<script id="roles-data" type="application/json">{{ roles_by_department|tojson }}</script>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='simulator.js') }}" defer></script>
+{% endblock %}
