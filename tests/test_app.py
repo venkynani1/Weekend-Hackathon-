@@ -22,16 +22,11 @@ class DashboardTests(unittest.TestCase):
         self.assertEqual(response.headers["X-Content-Type-Options"], "nosniff")
         self.assertEqual(response.headers["X-Frame-Options"], "DENY")
 
-    def test_dashboard_and_api(self):
+    def test_api_root_and_dashboard_endpoints(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Top 50 watch list", response.data)
-        self.assertIn(b'id="capacity-filter"', response.data)
-        self.assertIn(b'id="scenario-cost"', response.data)
-        self.assertIn(b"Why not accuracy?", response.data)
-        self.assertIn(b"Historical EDA checkpoint", response.data)
-        self.assertIn(b"Associations, not causal effects", response.data)
-        self.assertIn(b"leakage audit", response.data)
+        self.assertEqual(response.content_type, "application/json")
+        self.assertEqual(response.get_json()["service"], "TalentGuard API")
         api_response = self.client.get("/api/watchlist")
         self.assertEqual(api_response.status_code, 200)
         self.assertEqual(len(api_response.get_json()), 50)
@@ -65,13 +60,12 @@ class DashboardTests(unittest.TestCase):
         scores = [float(row["RiskScore"]) for row in watchlist]
         self.assertEqual(scores, sorted(scores, reverse=True))
 
-    def test_public_assets(self):
+    def test_legacy_frontend_assets_are_not_served(self):
         stylesheet = self.client.get("/style.css")
-        self.assertEqual(stylesheet.status_code, 200)
+        self.assertEqual(stylesheet.status_code, 404)
         stylesheet.close()
         script = self.client.get("/app.js")
-        self.assertEqual(script.status_code, 200)
-        self.assertIn(b"localStorage", script.data)
+        self.assertEqual(script.status_code, 404)
         script.close()
 
     def test_downloads(self):

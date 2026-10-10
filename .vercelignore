@@ -1,9 +1,0 @@
-dataset/
-artifacts/
-tests/
-__pycache__/
-*.pyc
-requirements-ml.txt
-services.py
-train.py
-models.py

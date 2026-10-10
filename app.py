@@ -7,14 +7,16 @@ from io import StringIO
 import csv
 from datetime import datetime
 
-from flask import Flask, abort, jsonify, make_response, render_template, request, send_from_directory
+from flask import Flask, abort, jsonify, make_response, request, send_from_directory
 
 from dashboard_service import DEFAULT_OUTPUT_DIR, DashboardService
 from supabase_repository import SupabaseAPIError, SupabaseRepository
 
 
 def create_app(test_config: dict | None = None) -> Flask:
-    app = Flask(__name__, static_folder="public", static_url_path="")
+    # Render hosts the API only. The React application is deployed separately
+    # from frontend/ to Vercel, so Flask must never serve a bundled UI.
+    app = Flask(__name__, static_folder=None)
     app.config.from_mapping(
         OUTPUT_DIR=DEFAULT_OUTPUT_DIR,
         SUPABASE_URL=os.environ.get("SUPABASE_URL", ""),
@@ -110,8 +112,13 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     @app.get("/")
     def index():
-        data = dashboard.load()
-        return render_template("index.html", **data)
+        return jsonify(
+            {
+                "service": "TalentGuard API",
+                "status": "ok",
+                "health": "/health",
+            }
+        )
 
     @app.get("/api/watchlist")
     def watchlist_api():

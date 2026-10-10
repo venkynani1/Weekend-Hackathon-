@@ -33,7 +33,8 @@ python train.py
 python app.py
 ```
 
-Open `http://127.0.0.1:5000`.
+The Flask process at `http://127.0.0.1:5000` is API-only. Its root returns
+service metadata as JSON; it does not serve a frontend.
 
 For the React application, copy `frontend/.env.example` to `frontend/.env.local`, fill in the Supabase publishable values, and run:
 
@@ -42,6 +43,8 @@ cd frontend
 npm install
 npm run dev
 ```
+
+Open the application at `http://127.0.0.1:5173`.
 
 Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` in the Flask environment to use the hosted database. Without them, Flask intentionally falls back to packaged outputs for local tests.
 
@@ -131,7 +134,9 @@ The jobs require `SOURCE_DATABASE_URL`, `SOURCE_EMPLOYEE_VIEW`, `SOURCE_CURSOR_C
 
 ## Deploy: Render + Vercel
 
-Deploy the Flask API from the root `render.yaml`. Configure `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, and `CORS_ORIGINS` in Render.
+Deploy the API-only Flask service from the root `render.yaml`. Configure
+`SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, and `CORS_ORIGINS` in Render. The
+Render root URL intentionally returns JSON and never serves the React UI.
 
 Deploy `frontend/` to Vercel and configure:
 
@@ -150,10 +155,13 @@ Generate and verify the committed outputs before deployment:
 ```powershell
 python train.py
 python -m unittest discover -s tests -v
-node --check public\app.js
+cd frontend
+npm ci
+npm run build
 ```
 
-Then deploy the frontend preview and production version from `frontend/`:
+Then deploy the frontend preview and production version while still inside
+`frontend/`:
 
 ```powershell
 npx vercel
